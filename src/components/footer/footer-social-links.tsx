@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import Image from 'next/image'
 import Box from '@mui/material/Box'
 import Link from '@mui/material/Link'
 import { SocialLink } from '@/interfaces/social-link'
@@ -46,6 +47,7 @@ const SocialLinkItem: FC<SocialLinkItemProps> = ({ item }) => (
   >
     <Link
       target="_blank"
+      rel="noopener noreferrer"
       sx={{
         lineHeight: 0,
         display: 'flex',
@@ -65,9 +67,15 @@ const SocialLinkItem: FC<SocialLinkItemProps> = ({ item }) => (
         },
       }}
       href={item.link}
+      aria-label={`Visit our ${item.name} page`}
     >
-      {/* eslint-disable-next-line */}
-      <img src={item.icon} alt={item.name + 'icon'} />
+      <Image
+        src={item.icon}
+        alt={`${item.name} icon`}
+        width={22}
+        height={22}
+        style={{ objectFit: 'contain' }}
+      />
     </Link>
   </Box>
 )

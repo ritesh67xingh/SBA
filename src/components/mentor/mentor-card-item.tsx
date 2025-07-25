@@ -37,7 +37,7 @@ const MentorCardItem: FC<Props> = ({ item }) => {
             mb: 2,
           }}
         >
-          <Image src={item.photo as string} width={570} height={427} alt={'Mentor ' + item.id} />
+          <Image src={item.photo as string} width={570} height={427} alt={`Mentor ${item.name}`} />
         </Box>
         <Box sx={{ mb: 2 }}>
           <Typography component="h2" variant="h4" sx={{ fontSize: '1.4rem' }}>
@@ -47,10 +47,17 @@ const MentorCardItem: FC<Props> = ({ item }) => {
           <Typography sx={{ mb: 2, color: 'text.secondary' }} variant="subtitle1">
             {item.description}
           </Typography>
-          <Box sx={{ '& img': { height: 26 } }}>
-            {/* eslint-disable-next-line */}
-            <img src={item.company?.logo} alt={item.company?.name + ' logo'} />
-          </Box>
+          {item.company?.logo && (
+            <Box sx={{ '& img': { height: 26 } }}>
+              <Image
+                src={item.company.logo}
+                alt={`${item.company.name || 'Company'} logo`}
+                width={100}
+                height={26}
+                style={{ objectFit: 'contain' }}
+              />
+            </Box>
+          )}
         </Box>
       </Box>
     </Box>
