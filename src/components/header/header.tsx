@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useState, useEffect } from 'react'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import IconButton from '@mui/material/IconButton'
@@ -13,13 +13,38 @@ const Header: FC = () => {
   const { breakpoints } = useTheme()
   const matchMobileView = useMediaQuery(breakpoints.down('md'))
 
+  // Close mobile menu when switching from mobile to desktop view
+  useEffect(() => {
+    if (!matchMobileView && visibleMenu) {
+      setVisibleMenu(false)
+    }
+  }, [matchMobileView, visibleMenu])
+
+  // Handle body scroll locking when mobile menu is open
+  useEffect(() => {
+    if (visibleMenu && matchMobileView) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+
+    // Cleanup function to restore scroll when component unmounts
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [visibleMenu, matchMobileView])
+
+  const handleMenuToggle = () => {
+    setVisibleMenu(!visibleMenu)
+  }
+
   return (
     <Box sx={{ backgroundColor: 'background.paper' }}>
       <Container sx={{ py: { xs: 2, md: 3 } }}>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <Logo />
           <Box sx={{ ml: 'auto', display: { xs: 'inline-flex', md: 'none' } }}>
-            <IconButton onClick={() => setVisibleMenu(!visibleMenu)}>
+            <IconButton onClick={handleMenuToggle} aria-label="Toggle navigation menu">
               <Menu />
             </IconButton>
           </Box>
@@ -53,7 +78,8 @@ const Header: FC = () => {
                   top: 10,
                   right: 10,
                 }}
-                onClick={() => setVisibleMenu(!visibleMenu)}
+                onClick={handleMenuToggle}
+                aria-label="Close navigation menu"
               >
                 <Close />
               </IconButton>
