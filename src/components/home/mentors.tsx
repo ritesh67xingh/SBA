@@ -63,7 +63,8 @@ const HomeOurMentors: FC = () => {
 
   const sliderConfig: Settings = {
     infinite: true,
-    // autoplay: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
     speed: 300,
     slidesToShow: matchMobileView ? 1 : 3,
     slidesToScroll: 1,

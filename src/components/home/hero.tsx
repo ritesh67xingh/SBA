@@ -93,8 +93,13 @@ const HomeHero: FC = () => {
                         '& img': { width: { xs: 146, md: 210 }, height: 'auto' },
                       }}
                     >
-                      {/* eslint-disable-next-line */}
-                      <img src="/images/headline-curve.svg" alt="Headline curve" />
+                      <Image 
+                        src="/images/headline-curve.svg" 
+                        alt="Decorative underline curve" 
+                        width={210}
+                        height={20}
+                        style={{ objectFit: 'contain' }}
+                      />
                     </Box>
                   </Typography>
                   your{' '}

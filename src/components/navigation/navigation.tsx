@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import Image from 'next/image'
 import Box from '@mui/material/Box'
 import { Link as ScrollLink } from 'react-scroll'
 import { navigations } from './navigation.data'
@@ -50,8 +51,13 @@ const Navigation: FC = () => {
               '& img': { width: 44, height: 'auto' },
             }}
           >
-            {/* eslint-disable-next-line */}
-            <img src="/images/headline-curve.svg" alt="Headline curve" />
+            <Image 
+              src="/images/headline-curve.svg" 
+              alt="Navigation item highlight curve" 
+              width={44}
+              height={12}
+              style={{ objectFit: 'contain' }}
+            />
           </Box>
           {label}
         </Box>

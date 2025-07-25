@@ -174,8 +174,13 @@ const HomeFeature: FC = () => {
                     '& img': { width: { xs: 140, md: 175 }, height: 'auto' },
                   }}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/headline-curve.svg" alt="Headline curve" />
+                  <Image 
+                    src="/images/headline-curve.svg" 
+                    alt="Decorative underline curve" 
+                    width={175}
+                    height={20}
+                    style={{ objectFit: 'contain' }}
+                  />
                 </Box>
               </Typography>
               Enjoyable
@@ -187,8 +192,8 @@ const HomeFeature: FC = () => {
             </Typography>
 
             <Grid container spacing={2} sx={{ ml: { xs: 0, md: 2 } }}>
-              {data.map(({ title, description, icon }, index) => (
-                <Grid key={String(index)} item xs={12} md={6}>
+              {data.map(({ id, title, description, icon }) => (
+                <Grid key={id} item xs={12} md={6}>
                   <Box sx={{ px: 2, py: 1.5, boxShadow: 1, borderRadius: 4, display: 'flex', alignItems: 'center' }}>
                     <Box
                       sx={{

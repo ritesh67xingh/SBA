@@ -6,6 +6,7 @@ import { EmotionCache } from '@emotion/cache'
 import { CacheProvider } from '@emotion/react'
 import { createEmotionCache } from '@/utils'
 import { MUIProvider } from '@/providers'
+import ErrorBoundary from '@/components/error-boundary'
 import 'slick-carousel/slick/slick.css'
 import '@/styles/globals.css'
 import '@/styles/react-slick.css'
@@ -35,7 +36,9 @@ const App: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
       <MUIProvider>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        {getLayout(<Component {...pageProps} />)}
+        <ErrorBoundary>
+          {getLayout(<Component {...pageProps} />)}
+        </ErrorBoundary>
       </MUIProvider>
     </CacheProvider>
   )

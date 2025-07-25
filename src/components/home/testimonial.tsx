@@ -98,8 +98,13 @@ const HomeTestimonial: FC = () => {
                     '& img': { width: { xs: 130, md: 175 }, height: 'auto' },
                   }}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/headline-curve.svg" alt="Headline curve" />
+                  <Image 
+                    src="/images/headline-curve.svg" 
+                    alt="Decorative underline curve" 
+                    width={175}
+                    height={20}
+                    style={{ objectFit: 'contain' }}
+                  />
                 </Box>
               </Typography>
               Say
@@ -107,8 +112,8 @@ const HomeTestimonial: FC = () => {
 
             <StyledSlickContainer>
               <Slider ref={sliderRef} {...sliderConfig}>
-                {data.map((item, index) => (
-                  <TestimonialItem key={String(index)} item={item} />
+                {data.map((item) => (
+                  <TestimonialItem key={item.id} item={item} />
                 ))}
               </Slider>
             </StyledSlickContainer>

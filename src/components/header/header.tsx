@@ -34,7 +34,7 @@ const Header: FC = () => {
     }
   }, [visibleMenu, matchMobileView])
 
-  const handleMenuToggle = () => {
+  const handleMenuToggle = (): void => {
     setVisibleMenu(!visibleMenu)
   }
 

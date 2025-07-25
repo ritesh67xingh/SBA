@@ -1,19 +1,15 @@
 import React from 'react'
 import theme from '@/config/theme'
-import { NextComponentType } from 'next'
-import { AppInitialProps } from 'next/app'
-import { EmotionCache } from '@emotion/cache'
 import { createEmotionCache } from '@/utils'
 import createEmotionServer from '@emotion/server/create-instance'
-import { AppContextType, AppPropsType } from 'next/dist/shared/lib/utils'
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 
 interface DocumentProps {
-  emotionStylesTags: any[]
+  emotionStylesTags: JSX.Element[]
 }
 
 class MyDocument extends Document<DocumentProps> {
-  render(): any {
+  render(): JSX.Element {
     return (
       <Html lang="en">
         <Head>
@@ -81,13 +77,8 @@ MyDocument.getInitialProps = async (ctx: DocumentContext) => {
 
   ctx.renderPage = () =>
     originalRenderPage({
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      enhanceApp: (
-        App: NextComponentType<AppContextType, AppInitialProps, AppPropsType & { emotionCache: EmotionCache }>
-      ) =>
-        function EnhanceApp(props) {
-          // console.log('props ->', props)
+      enhanceApp: (App: any) =>
+        function EnhanceApp(props: any) {
           return <App emotionCache={cache} {...props} />
         },
     })
