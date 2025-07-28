@@ -41,7 +41,6 @@ const StyledButtonRoot = styled('button', {
   outline: 'none !important',
   transition: theme.transitions.create(['transform']),
 
-  // hover
   '&:hover': {
     ...(!disableHoverEffect && {
       transform: 'translateY(-3px)',
@@ -52,7 +51,6 @@ const StyledButtonRoot = styled('button', {
     fontSize: 20,
   },
 
-  // sizes and variants
   ...(size === 'small' &&
     variant === 'outlined' && {
       padding: '4px 10px',
@@ -81,73 +79,92 @@ const StyledButtonRoot = styled('button', {
       fontSize: 15,
     }),
 
-  // variants
   ...(variant !== 'contained' && {
     backgroundColor: 'transparent',
     boxShadow: 'none !important',
   }),
 
-  // colors & varians
+  // === FACEBOOK BLUE STYLING ===
+  ...(color === 'primary' &&
+    variant === 'contained' && {
+      backgroundColor: '#1877F2',
+      color: '#fff',
+      boxShadow: '0 4px 12px rgba(24, 119, 242, 0.3)',
+      '&:hover': {
+        backgroundColor: '#155cc1',
+        boxShadow: '0 6px 16px rgba(21, 92, 193, 0.35)',
+      },
+    }),
+
+  ...(color === 'primary' &&
+    variant === 'outlined' && {
+      border: '2px solid #1877F2',
+      color: '#1877F2',
+      '&:hover': {
+        backgroundColor: 'rgba(24, 119, 242, 0.1)',
+      },
+    }),
+
+  ...(color === 'primary' &&
+    variant === 'text' && {
+      color: '#1877F2',
+      '&:hover': {
+        backgroundColor: 'rgba(24, 119, 242, 0.1)',
+      },
+    }),
+
   ...(color === 'default' &&
     variant === 'contained' && {
       backgroundColor: theme.palette.text.primary,
       color: theme.palette.primary.contrastText,
     }),
-  ...(color === 'primary' &&
-    variant === 'contained' && {
-      backgroundColor: theme.palette.primary.main,
-      color: theme.palette.primary.contrastText,
-      boxShadow: '0 6px 22px 0 rgb(18 124 113 / 12%)',
-    }),
+
   ...(color === 'secondary' &&
     variant === 'contained' && {
       backgroundColor: theme.palette.secondary.main,
       color: theme.palette.primary.contrastText,
     }),
+
   ...(color === 'dark' &&
     variant === 'contained' && {
       backgroundColor: '#313d56',
       color: theme.palette.primary.contrastText,
     }),
+
   ...(color === 'light' &&
     variant === 'contained' && {
       backgroundColor: theme.palette.primary.contrastText,
       color: theme.palette.text.primary,
     }),
 
-  ...(color === 'primary' &&
-    variant === 'outlined' && {
-      border: `2px solid ${theme.palette.primary.main}`,
-      color: theme.palette.primary.main,
-    }),
   ...(color === 'secondary' &&
     variant === 'outlined' && {
       border: `2px solid ${theme.palette.secondary.main}`,
       color: theme.palette.secondary.main,
     }),
+
   ...(color === 'dark' &&
     variant === 'outlined' && {
       border: `2px solid #313d56`,
       color: '#313d56',
     }),
+
   ...(color === 'light' &&
     variant === 'outlined' && {
       border: `2px solid #313d56`,
       color: `#313d56`,
     }),
 
-  ...(color === 'primary' &&
-    variant === 'text' && {
-      color: theme.palette.primary.main,
-    }),
   ...(color === 'secondary' &&
     variant === 'text' && {
       color: theme.palette.secondary.main,
     }),
+
   ...(color === 'dark' &&
     variant === 'text' && {
       color: '#313d56',
     }),
+
   ...(color === 'light' &&
     variant === 'text' && {
       color: theme.palette.primary.contrastText,

@@ -1,12 +1,13 @@
-import React, { FC } from 'react'
+import React, { FC, useState, useEffect } from 'react'
 import Image from 'next/image'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
-import { Link as ScrollLink } from 'react-scroll'
+import Dialog from '@mui/material/Dialog'
+import IconButton from '@mui/material/IconButton'
+import CloseIcon from '@mui/icons-material/Close'
 import { StyledButton } from '@/components/styled-button'
-import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 
 interface Exp {
   label: string
@@ -17,18 +18,9 @@ interface ExpItemProps {
 }
 
 const exps: Array<Exp> = [
-  {
-    label: 'Students',
-    value: '10K+',
-  },
-  {
-    label: 'Quality Course',
-    value: '20+',
-  },
-  {
-    label: 'Experience Mentors',
-    value: '10+',
-  },
+  { label: 'Students', value: '10K+' },
+  { label: 'Quality Course', value: '20+' },
+  { label: 'Experience Mentors', value: '10+' },
 ]
 
 const ExpItem: FC<ExpItemProps> = ({ item }) => {
@@ -36,7 +28,7 @@ const ExpItem: FC<ExpItemProps> = ({ item }) => {
   return (
     <Box sx={{ textAlign: 'center', mb: { xs: 1, md: 0 } }}>
       <Typography
-        sx={{ color: 'secondary.main', mb: { xs: 1, md: 2 }, fontSize: { xs: 34, md: 44 }, fontWeight: 'bold' }}
+        sx={{ color: '#1877F2', mb: { xs: 1, md: 2 }, fontSize: { xs: 34, md: 44 }, fontWeight: 'bold' }}
       >
         {value}
       </Typography>
@@ -48,6 +40,26 @@ const ExpItem: FC<ExpItemProps> = ({ item }) => {
 }
 
 const HomeHero: FC = () => {
+  const [openModal, setOpenModal] = useState(false)
+
+  const handleOpen = () => setOpenModal(true)
+  const handleClose = () => setOpenModal(false)
+
+  useEffect(() => {
+    const timer1 = setTimeout(() => {
+      setOpenModal(true)
+    }, 6000) // 6 seconds
+
+    const timer2 = setTimeout(() => {
+      setOpenModal(true)
+    }, 18000)
+
+    return () => {
+      clearTimeout(timer1)
+      clearTimeout(timer2)
+    }
+  }, [])
+
   return (
     <Box id="hero" sx={{ backgroundColor: 'background.paper', position: 'relative', pt: 4, pb: { xs: 8, md: 10 } }}>
       <Container maxWidth="lg">
@@ -64,11 +76,11 @@ const HomeHero: FC = () => {
             >
               <Box sx={{ mb: 3 }}>
                 <Typography
-                  component="h2"
+                  component="h1"
                   sx={{
                     position: 'relative',
-                    fontSize: { xs: 40, md: 72 },
-                    letterSpacing: 1.5,
+                    fontSize: { xs: 32, md: 56 },
+                    letterSpacing: 1.2,
                     fontWeight: 'bold',
                     lineHeight: 1.3,
                   }}
@@ -77,23 +89,22 @@ const HomeHero: FC = () => {
                     component="mark"
                     sx={{
                       position: 'relative',
-                      color: 'primary.main',
+                      color: '#1877F2',
                       fontSize: 'inherit',
                       fontWeight: 'inherit',
                       backgroundColor: 'unset',
                     }}
                   >
-                    Improve{' '}
+                    Master{' '}
                     <Box
                       sx={{
                         position: 'absolute',
-                        top: { xs: 24, md: 34 },
+                        top: { xs: 16, md: 24 },
                         left: 2,
                         transform: 'rotate(3deg)',
-                        '& img': { width: { xs: 146, md: 210 }, height: 'auto' },
+                        '& img': { width: { xs: 120, md: 160 }, height: 'auto' },
                       }}
                     >
-                      {/* eslint-disable-next-line */}
                       <img src="/images/headline-curve.svg" alt="Headline curve" />
                     </Box>
                   </Typography>
@@ -106,58 +117,60 @@ const HomeHero: FC = () => {
                       position: 'relative',
                       '& svg': {
                         position: 'absolute',
-                        top: -16,
-                        right: -21,
-                        width: { xs: 22, md: 30 },
+                        top: -12,
+                        right: -18,
+                        width: { xs: 20, md: 28 },
                         height: 'auto',
                       },
                     }}
                   >
-                    Skill
+                    Subjects
                     <svg version="1.1" viewBox="0 0 3183 3072">
                       <g id="Layer_x0020_1">
                         <path
-                          fill="#127C71"
+                          fill="#1877F2"
                           d="M2600 224c0,0 0,0 0,0 236,198 259,562 52,809 -254,303 -1849,2089 -2221,1776 -301,-190 917,-1964 1363,-2496 207,-247 570,-287 806,-89z"
                         />
                         <path
-                          fill="#127C71"
+                          fill="#1877F2"
                           d="M3166 2190c0,0 0,0 0,0 64,210 -58,443 -270,516 -260,90 -1848,585 -1948,252 -104,-230 1262,-860 1718,-1018 212,-73 437,39 500,250z"
                         />
                         <path
-                          fill="#127C71"
+                          fill="#1877F2"
                           d="M566 3c0,0 0,0 0,0 -219,-26 -427,134 -462,356 -44,271 -255,1921 90,1962 245,62 628,-1392 704,-1869 36,-221 -114,-424 -332,-449z"
                         />
                       </g>
                     </svg>
                   </Typography>{' '}
                   <br />
-                  with Different Way
+                  in a Smarter Way
                 </Typography>
               </Box>
+
               <Box sx={{ mb: 4, width: { xs: '100%', md: '70%' } }}>
                 <Typography sx={{ color: 'text.secondary', lineHeight: 1.6 }}>
-                  {
-                    "Let's take an online course to improve your skills in a different way, you can set your own study time according to your learning speed. So you san study comfortable and absorb tge material easily."
-                  }
+                  Master 200+ Smart Tricks in Speed & Vedic Maths <br />
+                  Crack Olympiads, Boards & JEE Faster with Proven Techniques<br />
+                  Guided by Expert Mentors from IITs & NITs<br />
+                  Get Instant Help Anytime with SBA AI Assistant (24×7)<br />
+                  Strengthen Science Concepts for a Competitive Advantage
                 </Typography>
               </Box>
+
               <Box sx={{ '& button': { mr: 2 } }}>
-                <ScrollLink to="popular-course" spy={true} smooth={true} offset={0} duration={350}>
-                  <StyledButton color="primary" size="large" variant="contained">
-                    Get Started
-                  </StyledButton>
-                </ScrollLink>
-                <ScrollLink to="video-section" spy={true} smooth={true} offset={0} duration={350}>
-                  <StyledButton color="primary" size="large" variant="outlined" startIcon={<PlayArrowIcon />}>
-                    Watch Video
-                  </StyledButton>
-                </ScrollLink>
+                <StyledButton
+                  color="primary"
+                  size="large"
+                  variant="contained"
+                  onClick={handleOpen}
+                >
+                  Get 1 on 1 Instant Demo
+                </StyledButton>
               </Box>
             </Box>
           </Grid>
+
           <Grid item xs={12} md={5} sx={{ position: 'relative' }}>
-            {/* Sertificate badge */}
             <Box
               sx={{
                 position: 'absolute',
@@ -192,7 +205,7 @@ const HomeHero: FC = () => {
               <Box>
                 <Typography
                   component="h6"
-                  sx={{ color: 'secondary.main', fontSize: '1.1rem', fontWeight: 700, mb: 0.5 }}
+                  sx={{ color: '#1877F2', fontSize: '1.1rem', fontWeight: 700, mb: 0.5 }}
                 >
                   Certificate
                 </Typography>
@@ -207,7 +220,6 @@ const HomeHero: FC = () => {
           </Grid>
         </Grid>
 
-        {/* Experience */}
         <Box sx={{ boxShadow: 2, py: 4, px: 7, borderRadius: 4 }}>
           <Grid container spacing={2}>
             {exps.map((item) => (
@@ -218,6 +230,36 @@ const HomeHero: FC = () => {
           </Grid>
         </Box>
       </Container>
+
+      {/* Modal with Zoho Form - Updated to remove extra white space */}
+      <Dialog
+        open={openModal}
+        onClose={handleClose}
+        maxWidth="md"
+        fullWidth
+        PaperProps={{
+          sx: {
+            m: 0,
+            p: 0,
+            borderRadius: 2,
+            overflow: 'hidden',
+          },
+        }}
+      >
+        <Box sx={{ position: 'relative', height: '80vh', width: '100%' }}>
+          <IconButton
+            onClick={handleClose}
+            sx={{ position: 'absolute', top: 8, right: 8, zIndex: 10, backgroundColor: '#fff' }}
+          >
+            <CloseIcon />
+          </IconButton>
+          <iframe
+            title="Zoho Demo Form"
+            src="https://forms.zohopublic.com/infoscholarbri1/form/DemoForm/formperma/4leVoe1ne4cBPGNF01gM021HgTb1sJLnDHC38lstbEg"
+            style={{ width: '100%', height: '100%', border: 'none' }}
+          ></iframe>
+        </Box>
+      </Dialog>
     </Box>
   )
 }
