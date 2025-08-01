@@ -118,7 +118,7 @@ const HomeFeature: FC = () => {
                       flexDirection: 'column',
                     }}
                   >
-                    <Typography variant="h4" sx={{ color: '#32dc88' }}>
+                    <Typography variant="h4" sx={{ color: '#1877F2' }}>
                       75%
                     </Typography>
                     <CircularProgress
@@ -134,7 +134,7 @@ const HomeFeature: FC = () => {
                       variant="determinate"
                       value={75}
                       size={85}
-                      sx={{ transform: 'rotate(96deg) !important', color: '#32dc88', position: 'absolute' }}
+                      sx={{ transform: 'rotate(96deg) !important', color: '#1877F2', position: 'absolute' }}
                     />
                   </Box>
                 </Box>
