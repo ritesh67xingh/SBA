@@ -19,9 +19,9 @@ interface ExpItemProps {
 }
 
 const exps: Array<Exp> = [
-  { label: 'Students', value: '10K+' },
-  { label: 'Quality Course', value: '20+' },
-  { label: 'Experience Mentors', value: '10+' },
+  { label: 'Achievers Empowered', value: '50K+' },
+  { label: 'Result-Oriented Modules', value: '20+' },
+  { label: 'Subject Experts', value: '20+' },
 ]
 
 const ExpItem: FC<ExpItemProps> = ({ item }) => {
@@ -140,8 +140,8 @@ const HomeHero: FC = () => {
                     >
                       <img src="/SBA/images/headline-curve-responsive.svg" alt="Headline curve" className="crisp-image" />
                     </Box>
-                  </Typography>
-                  your{' '}
+                  </Typography>{' '}
+                  your
                   <Typography
                     component="span"
                     sx={{
@@ -243,10 +243,10 @@ const HomeHero: FC = () => {
                   component="h6"
                   sx={{ color: '#1877F2', fontSize: '1.1rem', fontWeight: 700, mb: 0.5 }}
                 >
-                  Certificate
+                  Skill-Based
                 </Typography>
                 <Typography variant="subtitle1" sx={{ color: 'text.secondary', lineHeight: 1.3 }}>
-                  There are certificates for all courses.
+                  Education & More.
                 </Typography>
               </Box>
             </Box>
