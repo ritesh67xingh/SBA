@@ -183,11 +183,11 @@ const HomeHero: FC = () => {
 
               <Box sx={{ mb: 4, width: { xs: '100%', md: '70%' } }}>
                 <Typography sx={{ color: 'text.secondary', lineHeight: 1.6 }}>
-                  Master 200+ Smart Tricks in Speed & Vedic Maths <br />
-                  Crack Olympiads, Boards & JEE Faster with Proven Techniques<br />
-                  Guided by Expert Mentors from IITs & NITs<br />
-                  Get Instant Help Anytime with SBA AI Assistant (24×7)<br />
-                  Strengthen Science Concepts for a Competitive Advantage
+                  Master 200+ Vedic & Speed Math Tricks<br />
+                  Crack Olympiads, Boards & JEE Faster<br />
+                  Learn from IIT & NIT Expert Mentors<br />
+                  24×7 Help via SBA AI Assistant<br />
+                  Boost Science for Competitive Edge
                 </Typography>
               </Box>
 
