@@ -12,6 +12,7 @@
   left: 0;
   z-index: 1;
   transform: rotate(3deg);
+  transition: all 0.3s ease;
 }
 
 /* Mobile specific adjustments */
@@ -19,6 +20,7 @@
   .curve-line {
     bottom: -6px;
     transform: rotate(2deg);
+    width: 100%;
   }
 }
 
@@ -26,6 +28,16 @@
   .curve-line {
     bottom: -4px;
     transform: rotate(1deg);
+    width: 100%;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 360px) {
+  .curve-line {
+    bottom: -3px;
+    transform: rotate(0.5deg);
+    width: 100%;
   }
 }
 
@@ -35,4 +47,40 @@
   image-rendering: crisp-edges;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive text container for better curve positioning */
+.responsive-text-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Ensure curve lines scale properly with text */
+.curve-line img {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  display: block;
+}
+
+/* Better positioning for different screen sizes */
+@media (max-width: 1024px) {
+  .curve-line {
+    position: absolute;
+    top: 100% !important;
+    left: 0 !important;
+    right: auto !important;
+    width: 100% !important;
+  }
+}
+
+/* Ensure proper scaling on all devices */
+@media (max-width: 600px) {
+  .curve-line {
+    transform: rotate(1deg);
+    bottom: -2px;
+  }
 }

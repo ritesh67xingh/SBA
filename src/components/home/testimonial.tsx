@@ -87,6 +87,7 @@ const HomeTestimonial: FC = () => {
               Testimonial What our{' '}
               <Typography
                 component="mark"
+                className="responsive-text-container"
                 sx={{
                   position: 'relative',
                   color: 'primary.main',

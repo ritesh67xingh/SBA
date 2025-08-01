@@ -21,6 +21,7 @@ const Navigation: FC = () => {
           spy={true}
           smooth={true}
           duration={350}
+          className="responsive-text-container"
           sx={{
             position: 'relative',
             color: 'text.disabled',

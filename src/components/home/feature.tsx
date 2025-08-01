@@ -183,6 +183,7 @@ const HomeFeature: FC = () => {
               Make your{' '}
               <Typography
                 component="mark"
+                className="responsive-text-container"
                 sx={{
                   position: 'relative',
                   color: 'primary.main',

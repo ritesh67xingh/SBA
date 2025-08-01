@@ -113,6 +113,7 @@ const HomeHero: FC = () => {
                 >
                   <Typography
                     component="mark"
+                    className="responsive-text-container"
                     sx={{
                       position: 'relative',
                       color: '#1877F2',
