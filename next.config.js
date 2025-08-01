@@ -1,16 +1,16 @@
 /** @type {import('next').NextConfig} */
 
 // Check if we're building for GitHub Pages
-const isGithubActions = process.env.GITHUB_ACTIONS || false;
 const isProduction = process.env.NODE_ENV === 'production';
 
+// For GitHub Pages, we always need the basePath and assetPrefix in production
 let assetPrefix = '';
 let basePath = '';
 
-if (isGithubActions && isProduction) {
-  // Extract repo name from GITHUB_REPOSITORY (format: owner/repo)
-  const repo = process.env.GITHUB_REPOSITORY?.replace(/.*?\//, '') || 'SBA';
-  assetPrefix = `/${repo}/`;
+if (isProduction) {
+  // Always use SBA as the repo name for production builds
+  const repo = 'SBA';
+  assetPrefix = `/${repo}`;
   basePath = `/${repo}`;
 }
 

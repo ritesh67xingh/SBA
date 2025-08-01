@@ -8,11 +8,11 @@ export const getAssetPath = (path: string): string => {
   }
   
   // Server-side: use environment variables
-  const isGithubActions = process.env.GITHUB_ACTIONS || false;
   const isProduction = process.env.NODE_ENV === 'production';
   
-  if (isGithubActions && isProduction) {
-    const repo = process.env.GITHUB_REPOSITORY?.replace(/.*?\//, '') || 'SBA';
+  if (isProduction) {
+    // Always use SBA as the repo name for production builds
+    const repo = 'SBA';
     return `/${repo}${path}`;
   }
   
