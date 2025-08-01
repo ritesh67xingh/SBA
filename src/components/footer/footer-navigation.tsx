@@ -41,18 +41,18 @@ interface NavigationItemProps {
 
 const NavigationItem: FC<NavigationItemProps> = ({ label, path }) => {
   return (
-    <Link href={path} passHref>
-      <MuiLink
-        underline="hover"
-        sx={{
-          display: 'block',
-          mb: 1,
-          color: 'primary.contrastText',
-        }}
-      >
-        {label}
-      </MuiLink>
-    </Link>
+    <MuiLink
+      component={Link}
+      href={path}
+      underline="hover"
+      sx={{
+        display: 'block',
+        mb: 1,
+        color: 'primary.contrastText',
+      }}
+    >
+      {label}
+    </MuiLink>
   )
 }
 
