@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import Box from '@mui/material/Box'
 import { Link as ScrollLink } from 'react-scroll'
 import { navigations } from './navigation.data'
+import { getAssetPath } from '@/utils/paths'
 
 const Navigation: FC = () => {
   return (
@@ -51,7 +52,7 @@ const Navigation: FC = () => {
             }}
           >
             {/* eslint-disable-next-line */}
-            <img src="/images/headline-curve.svg" alt="Headline curve" />
+            <img src={getAssetPath("/images/headline-curve.svg")} alt="Headline curve" />
           </Box>
           {label}
         </Box>

@@ -8,6 +8,7 @@ import Dialog from '@mui/material/Dialog'
 import IconButton from '@mui/material/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
 import { StyledButton } from '@/components/styled-button'
+import { getAssetPath } from '@/utils/paths'
 
 interface Exp {
   label: string
@@ -105,7 +106,7 @@ const HomeHero: FC = () => {
                         '& img': { width: { xs: 120, md: 160 }, height: 'auto' },
                       }}
                     >
-                      <img src="/images/headline-curve.svg" alt="Headline curve" />
+                      <img src={getAssetPath("/images/headline-curve.svg")} alt="Headline curve" />
                     </Box>
                   </Typography>
                   your{' '}
@@ -200,7 +201,7 @@ const HomeHero: FC = () => {
                   '& img': { width: '32px !important', height: 'auto' },
                 }}
               >
-                <Image src="/images/certificate.png" alt="Certificate icon" width={50} height={50} quality={97} />
+                                  <Image src={getAssetPath("/images/certificate.png")} alt="Certificate icon" width={50} height={50} quality={97} />
               </Box>
               <Box>
                 <Typography
@@ -215,7 +216,7 @@ const HomeHero: FC = () => {
               </Box>
             </Box>
             <Box sx={{ lineHeight: 0 }}>
-              <Image src="/images/home-hero.jpg" width={775} height={787} alt="Hero img" />
+              <Image src={getAssetPath("/images/home-hero.jpg")} width={775} height={787} alt="Hero img" />
             </Box>
           </Grid>
         </Grid>

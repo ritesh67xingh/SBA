@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography'
 import CircularProgress from '@mui/material/CircularProgress'
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress'
 import { data } from './feature.data'
+import { getAssetPath } from '@/utils/paths'
 
 interface LinearProgressProps {
   order: number
@@ -42,7 +43,7 @@ const HomeFeature: FC = () => {
         <Grid container spacing={3}>
           <Grid item xs={12} md={5}>
             <Box sx={{ position: 'relative' }}>
-              <Image src="/images/home-feature.png" width={650} height={678} quality={97} alt="Feature img" />
+              <Image src={getAssetPath("/images/home-feature.png")} width={650} height={678} quality={97} alt="Feature img" />
               <Box
                 sx={{
                   position: 'absolute',
@@ -175,7 +176,7 @@ const HomeFeature: FC = () => {
                   }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/headline-curve.svg" alt="Headline curve" />
+                  <img src={getAssetPath("/images/headline-curve.svg")} alt="Headline curve" />
                 </Box>
               </Typography>
               Enjoyable
