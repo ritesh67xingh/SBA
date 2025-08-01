@@ -38,24 +38,32 @@ const BorderLinearProgress = styled(LinearProgress, {
 
 const HomeFeature: FC = () => {
   return (
-    <Box id="feature" sx={{ py: { xs: 10, md: 14 }, backgroundColor: 'background.paper' }}>
+    <Box id="feature" sx={{ 
+      py: { xs: 6, sm: 8, md: 10, lg: 14 }, 
+      backgroundColor: 'background.paper' 
+    }}>
       <Container>
-        <Grid container spacing={3}>
+        <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
           <Grid item xs={12} md={5}>
-            <Box sx={{ position: 'relative' }}>
+            <Box sx={{ 
+              position: 'relative',
+              px: { xs: 2, sm: 0 }
+            }}>
               <img src="/SBA/images/home-feature.png" width={400} height={350} alt="Feature img" style={{ maxWidth: '100%', height: 'auto' }} />
               <Box
                 sx={{
                   position: 'absolute',
-                  top: -36,
-                  right: { xs: 0, md: -36 },
+                  top: { xs: -20, sm: -30, md: -36 },
+                  right: { xs: 10, sm: 0, md: -36 },
+                  left: { xs: 10, sm: 'auto', md: 'auto' },
                   boxShadow: 2,
                   borderRadius: 1,
-                  px: 2.2,
-                  py: 1.4,
+                  px: { xs: 1.5, sm: 2, md: 2.2 },
+                  py: { xs: 1, sm: 1.2, md: 1.4 },
                   zIndex: 1,
                   backgroundColor: 'background.paper',
-                  width: 190,
+                  width: { xs: 'auto', sm: 160, md: 190 },
+                  maxWidth: { xs: 'calc(100% - 20px)', md: 190 },
                 }}
               >
                 <Typography variant="h5" sx={{ mb: 1 }}>
@@ -84,15 +92,18 @@ const HomeFeature: FC = () => {
               <Box
                 sx={{
                   position: 'absolute',
-                  bottom: -12,
-                  left: { xs: 0, md: -24 },
+                  bottom: { xs: -8, sm: -10, md: -12 },
+                  left: { xs: 10, sm: 0, md: -24 },
+                  right: { xs: 10, sm: 'auto', md: 'auto' },
                   boxShadow: 2,
                   borderRadius: 1,
-                  px: 2.2,
-                  py: 2,
+                  px: { xs: 1.5, sm: 2, md: 2.2 },
+                  py: { xs: 1.5, sm: 1.8, md: 2 },
                   zIndex: 1,
                   backgroundColor: 'background.paper',
                   textAlign: 'center',
+                  width: { xs: 'auto', sm: 160, md: 190 },
+                  maxWidth: { xs: 'calc(100% - 20px)', md: 190 },
                 }}
               >
                 <Box
@@ -142,18 +153,22 @@ const HomeFeature: FC = () => {
             </Box>
           </Grid>
           <Grid item xs={12} md={7}>
-            <Typography
-              component="h2"
-              sx={{
-                position: 'relative',
-                fontSize: { xs: 40, md: 50 },
-                ml: { xs: 0, md: 4 },
-                mt: 2,
-                mb: 3,
-                lineHeight: 1,
-                fontWeight: 'bold',
-              }}
-            >
+            <Box sx={{ 
+              px: { xs: 2, sm: 3, md: 0 },
+              pt: { xs: 3, sm: 0 }
+            }}>
+              <Typography
+                component="h2"
+                sx={{
+                  position: 'relative',
+                  fontSize: { xs: 28, sm: 36, md: 42, lg: 50 },
+                  ml: { xs: 0, md: 4 },
+                  mt: { xs: 1, sm: 2, md: 2 },
+                  mb: { xs: 2, sm: 3, md: 3 },
+                  lineHeight: { xs: 1.1, md: 1 },
+                  fontWeight: 'bold',
+                }}
+              >
               Make your{' '}
               <Typography
                 component="mark"
@@ -182,38 +197,72 @@ const HomeFeature: FC = () => {
               Enjoyable
             </Typography>
 
-            <Typography sx={{ color: 'text.secondary', mb: 2, ml: { xs: 0, md: 4 } }}>
+            <Typography sx={{ 
+              color: 'text.secondary', 
+              mb: { xs: 2, sm: 3, md: 2 }, 
+              ml: { xs: 0, md: 4 },
+              fontSize: { xs: 14, sm: 16, md: 'inherit' },
+              lineHeight: { xs: 1.5, md: 1.6 }
+            }}>
               Set the way of learning according to your wishes with some of the benefits that you get us, so you on
               enjoy the lessons that we provide.
             </Typography>
 
-            <Grid container spacing={2} sx={{ ml: { xs: 0, md: 2 } }}>
+            <Grid container spacing={{ xs: 1.5, sm: 2, md: 2 }} sx={{ ml: { xs: 0, md: 2 } }}>
               {data.map(({ title, description, icon }, index) => (
-                <Grid key={String(index)} item xs={12} md={6}>
-                  <Box sx={{ px: 2, py: 1.5, boxShadow: 1, borderRadius: 4, display: 'flex', alignItems: 'center' }}>
+                <Grid key={String(index)} item xs={12} sm={6} md={6}>
+                  <Box sx={{ 
+                    px: { xs: 1.5, sm: 2, md: 2 }, 
+                    py: { xs: 1.2, sm: 1.5, md: 1.5 }, 
+                    boxShadow: 1, 
+                    borderRadius: 4, 
+                    display: 'flex', 
+                    alignItems: 'center',
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      boxShadow: 2,
+                      transform: 'translateY(-2px)'
+                    }
+                  }}>
                     <Box
                       sx={{
-                        mr: 1,
+                        mr: { xs: 1, sm: 1.5 },
                         backgroundColor: 'primary.main',
                         borderRadius: '50%',
-                        height: 36,
-                        width: 36,
+                        height: { xs: 32, sm: 36, md: 40 },
+                        width: { xs: 32, sm: 36, md: 40 },
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         color: 'primary.contrastText',
+                        flexShrink: 0,
                         '& svg': {
-                          fontSize: 20,
+                          fontSize: { xs: 16, sm: 18, md: 20 },
                         },
                       }}
                     >
                       {icon}
                     </Box>
-                    <Box sx={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
-                      <Typography variant="h6" sx={{ fontSize: '1rem', mb: 1, color: 'secondary.main' }}>
+                    <Box sx={{ display: 'flex', flex: 1, flexDirection: 'column', minWidth: 0 }}>
+                      <Typography 
+                        variant="h6" 
+                        sx={{ 
+                          fontSize: { xs: 14, sm: 16, md: '1rem' }, 
+                          mb: { xs: 0.5, sm: 1 }, 
+                          color: 'secondary.main',
+                          fontWeight: 600
+                        }}
+                      >
                         {title}
                       </Typography>
-                      <Typography sx={{ lineHeight: 1.3, color: 'text.secondary' }} variant="subtitle1">
+                      <Typography 
+                        sx={{ 
+                          lineHeight: { xs: 1.2, sm: 1.3, md: 1.3 }, 
+                          color: 'text.secondary',
+                          fontSize: { xs: 12, sm: 14, md: 'inherit' }
+                        }} 
+                        variant="subtitle1"
+                      >
                         {description}
                       </Typography>
                     </Box>
@@ -221,6 +270,7 @@ const HomeFeature: FC = () => {
                 </Grid>
               ))}
             </Grid>
+            </Box>
           </Grid>
         </Grid>
       </Container>

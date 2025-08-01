@@ -9,16 +9,39 @@ const Footer: FC = () => {
   return (
     <Box
       component="footer"
-      sx={{ backgroundColor: 'primary.main', py: { xs: 6, md: 10 }, color: 'primary.contrastText' }}
+      sx={{ 
+        backgroundColor: 'primary.main', 
+        py: { xs: 4, sm: 6, md: 8, lg: 10 }, 
+        color: 'primary.contrastText' 
+      }}
     >
       <Container>
-        <Grid container spacing={1}>
+        <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
           <Grid item xs={12} md={5}>
-            <Box sx={{ width: { xs: '100%', md: 360 }, mb: { xs: 3, md: 0 } }}>
-              <Typography component="h2" variant="h2" sx={{ mb: 2 }}>
+            <Box sx={{ 
+              width: { xs: '100%', md: 360 }, 
+              mb: { xs: 3, md: 0 },
+              px: { xs: 2, sm: 0 }
+            }}>
+              <Typography 
+                component="h2" 
+                variant="h2" 
+                sx={{ 
+                  mb: { xs: 1.5, sm: 2 },
+                  fontSize: { xs: 24, sm: 28, md: 32 }
+                }}
+              >
                 Coursespace
               </Typography>
-              <Typography variant="subtitle1" sx={{ letterSpacing: 1, mb: 2 }}>
+              <Typography 
+                variant="subtitle1" 
+                sx={{ 
+                  letterSpacing: 1, 
+                  mb: { xs: 1.5, sm: 2 },
+                  fontSize: { xs: 13, sm: 14, md: 'inherit' },
+                  lineHeight: { xs: 1.4, md: 1.5 }
+                }}
+              >
                 Coursespace is an online learning platform that has been operating since 2018 until now.
               </Typography>
               <FooterSocialLinks />

@@ -6,7 +6,12 @@ import { navigations } from './navigation.data'
 
 const Navigation: FC = () => {
   return (
-    <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}>
+    <Box sx={{ 
+      display: 'flex', 
+      flexDirection: { xs: 'column', md: 'row' },
+      gap: { xs: 2, md: 1 },
+      alignItems: { xs: 'center', md: 'flex-start' }
+    }}>
       {navigations.map(({ path: destination, label }) => (
         <Box
           component={ScrollLink as any}
@@ -24,9 +29,12 @@ const Navigation: FC = () => {
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
-            px: { xs: 0, md: 3 },
-            mb: { xs: 3, md: 0 },
-            fontSize: { xs: '1.2rem', md: 'inherit' },
+            px: { xs: 2, sm: 3, md: 3 },
+            py: { xs: 1.5, md: 0 },
+            mb: { xs: 1, md: 0 },
+            fontSize: { xs: '1.1rem', sm: '1.2rem', md: 'inherit' },
+            borderRadius: { xs: 2, md: 0 },
+            transition: 'all 0.3s ease',
             ...(destination === '/' && {
               color: 'primary.main',
             }),
@@ -37,6 +45,7 @@ const Navigation: FC = () => {
 
             '&:hover': {
               color: 'primary.main',
+              backgroundColor: { xs: 'rgba(0,0,0,0.04)', md: 'transparent' },
               '&>div': {
                 display: 'block',
               },

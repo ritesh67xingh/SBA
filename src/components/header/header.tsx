@@ -14,12 +14,18 @@ const Header: FC = () => {
   const matchMobileView = useMediaQuery(breakpoints.down('md'))
 
   return (
-    <Box sx={{ backgroundColor: 'background.paper' }}>
-      <Container sx={{ py: { xs: 2, md: 3 } }}>
+    <Box sx={{ backgroundColor: 'background.paper', position: 'sticky', top: 0, zIndex: 1000 }}>
+      <Container sx={{ py: { xs: 1.5, sm: 2, md: 2.5, lg: 3 } }}>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <Logo />
           <Box sx={{ ml: 'auto', display: { xs: 'inline-flex', md: 'none' } }}>
-            <IconButton onClick={() => setVisibleMenu(!visibleMenu)}>
+            <IconButton 
+              onClick={() => setVisibleMenu(!visibleMenu)}
+              sx={{ 
+                p: { xs: 1, sm: 1.5 },
+                '&:hover': { backgroundColor: 'rgba(0,0,0,0.04)' }
+              }}
+            >
               <Menu />
             </IconButton>
           </Box>
@@ -30,16 +36,21 @@ const Header: FC = () => {
               alignItems: 'center',
               justifyContent: 'space-between',
               flexDirection: { xs: 'column', md: 'row' },
-
-              transition: (theme) => theme.transitions.create(['top']),
+              transition: (theme) => theme.transitions.create(['top', 'opacity'], {
+                duration: theme.transitions.duration.standard,
+              }),
               ...(matchMobileView && {
-                py: 6,
+                py: { xs: 4, sm: 6 },
+                px: { xs: 2, sm: 4 },
                 backgroundColor: 'background.paper',
-                zIndex: 'appBar',
+                zIndex: 999,
                 position: 'fixed',
-                height: { xs: '100vh', md: 'auto' },
-                top: visibleMenu ? 0 : '-120vh',
+                height: '100vh',
+                top: visibleMenu ? 0 : '-100vh',
                 left: 0,
+                right: 0,
+                opacity: visibleMenu ? 1 : 0,
+                visibility: visibleMenu ? 'visible' : 'hidden',
               }),
             }}
           >

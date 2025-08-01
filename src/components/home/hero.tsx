@@ -27,13 +27,29 @@ const exps: Array<Exp> = [
 const ExpItem: FC<ExpItemProps> = ({ item }) => {
   const { value, label } = item
   return (
-    <Box sx={{ textAlign: 'center', mb: { xs: 1, md: 0 } }}>
+    <Box sx={{ 
+      textAlign: 'center', 
+      mb: { xs: 1, md: 0 },
+      px: { xs: 1, sm: 2 }
+    }}>
       <Typography
-        sx={{ color: '#1877F2', mb: { xs: 1, md: 2 }, fontSize: { xs: 34, md: 44 }, fontWeight: 'bold' }}
+        sx={{ 
+          color: '#1877F2', 
+          mb: { xs: 0.5, sm: 1, md: 2 }, 
+          fontSize: { xs: 28, sm: 32, md: 38, lg: 44 }, 
+          fontWeight: 'bold',
+          lineHeight: 1.1
+        }}
       >
         {value}
       </Typography>
-      <Typography color="text.secondary" variant="h5">
+      <Typography 
+        color="text.secondary" 
+        variant="h5"
+        sx={{
+          fontSize: { xs: 14, sm: 16, md: 17, lg: 19 }
+        }}
+      >
         {label}
       </Typography>
     </Box>
@@ -62,9 +78,17 @@ const HomeHero: FC = () => {
   }, [])
 
   return (
-    <Box id="hero" sx={{ backgroundColor: 'background.paper', position: 'relative', pt: 4, pb: { xs: 8, md: 10 } }}>
+    <Box id="hero" sx={{ 
+      backgroundColor: 'background.paper', 
+      position: 'relative', 
+      pt: { xs: 2, sm: 3, md: 4, lg: 6 }, 
+      pb: { xs: 6, sm: 8, md: 10, lg: 12 } 
+    }}>
       <Container maxWidth="lg">
-        <Grid container spacing={0} sx={{ flexDirection: { xs: 'column', md: 'unset' } }}>
+        <Grid container spacing={{ xs: 3, md: 0 }} sx={{ 
+          flexDirection: { xs: 'column', md: 'unset' },
+          alignItems: { xs: 'center', md: 'flex-start' }
+        }}>
           <Grid item xs={12} md={7}>
             <Box
               sx={{
@@ -73,17 +97,18 @@ const HomeHero: FC = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
+                px: { xs: 2, sm: 3, md: 0 },
               }}
             >
-              <Box sx={{ mb: 3 }}>
+              <Box sx={{ mb: { xs: 2, sm: 3, md: 4 } }}>
                 <Typography
                   component="h1"
                   sx={{
                     position: 'relative',
-                    fontSize: { xs: 32, md: 56 },
-                    letterSpacing: 1.2,
+                    fontSize: { xs: 28, sm: 36, md: 48, lg: 56 },
+                    letterSpacing: { xs: 0.5, md: 1.2 },
                     fontWeight: 'bold',
-                    lineHeight: 1.3,
+                    lineHeight: { xs: 1.2, md: 1.3 },
                   }}
                 >
                   <Typography
@@ -176,17 +201,19 @@ const HomeHero: FC = () => {
             <Box
               sx={{
                 position: 'absolute',
-                bottom: 30,
-                left: { xs: 0, md: -150 },
+                bottom: { xs: 20, sm: 25, md: 30 },
+                left: { xs: 10, sm: 20, md: -150 },
+                right: { xs: 10, sm: 20, md: 'auto' },
                 boxShadow: 1,
                 borderRadius: 3,
-                px: 2,
-                py: 1.4,
+                px: { xs: 1.5, sm: 2 },
+                py: { xs: 1, sm: 1.4 },
                 zIndex: 1,
                 backgroundColor: 'background.paper',
                 display: 'flex',
                 alignItems: 'flex-start',
-                width: 280,
+                width: { xs: 'auto', sm: 250, md: 280 },
+                maxWidth: { xs: 'calc(100% - 20px)', md: 280 },
               }}
             >
               <Box
@@ -222,10 +249,16 @@ const HomeHero: FC = () => {
           </Grid>
         </Grid>
 
-        <Box sx={{ boxShadow: 2, py: 4, px: 7, borderRadius: 4 }}>
-          <Grid container spacing={2}>
+        <Box sx={{ 
+          boxShadow: 2, 
+          py: { xs: 3, sm: 4, md: 5 }, 
+          px: { xs: 3, sm: 5, md: 7 }, 
+          borderRadius: 4,
+          mt: { xs: 3, sm: 4, md: 6 }
+        }}>
+          <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
             {exps.map((item) => (
-              <Grid key={item.value} item xs={12} md={4}>
+              <Grid key={item.value} item xs={12} sm={6} md={4}>
                 <ExpItem item={item} />
               </Grid>
             ))}

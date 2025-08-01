@@ -64,21 +64,26 @@ const HomeTestimonial: FC = () => {
   }
 
   return (
-    <Box id="testimonial" sx={{ pb: { xs: 6, md: 10 }, backgroundColor: 'background.paper' }}>
+    <Box id="testimonial" sx={{ 
+      pb: { xs: 4, sm: 6, md: 8, lg: 10 }, 
+      backgroundColor: 'background.paper',
+      pt: { xs: 4, sm: 6, md: 8 }
+    }}>
       <Container>
-        <Grid container spacing={5}>
+        <Grid container spacing={{ xs: 3, sm: 4, md: 5 }}>
           <Grid item xs={12} md={6}>
-            <Typography
-              component="h2"
-              sx={{
-                position: 'relative',
-                fontSize: { xs: 36, md: 46 },
-                mt: { xs: 0, md: 7 },
-                mb: 4,
-                lineHeight: 1,
-                fontWeight: 'bold',
-              }}
-            >
+            <Box sx={{ px: { xs: 2, sm: 0 } }}>
+              <Typography
+                component="h2"
+                sx={{
+                  position: 'relative',
+                  fontSize: { xs: 28, sm: 32, md: 38, lg: 46 },
+                  mt: { xs: 0, md: 7 },
+                  mb: { xs: 3, sm: 4, md: 4 },
+                  lineHeight: { xs: 1.1, md: 1 },
+                  fontWeight: 'bold',
+                }}
+              >
               Testimonial What our{' '}
               <Typography
                 component="mark"
@@ -113,6 +118,7 @@ const HomeTestimonial: FC = () => {
                 ))
               )}
             </StyledSlickContainer>
+            </Box>
           </Grid>
           <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
             <Box sx={{ width: { xs: '100%', md: '90%' } }}>
