@@ -11,17 +11,17 @@ const HomeNewsLetter: FC = () => {
       <Container>
         <Box
           sx={{
-            backgroundColor: 'secondary.main',
+            backgroundColor: '#000000',
             borderRadius: 10,
             py: { xs: 4, md: 10 },
             px: { xs: 4, md: 8 },
             textAlign: 'center',
           }}
         >
-          <Typography variant="h1" component="h2" sx={{ mb: 1, fontSize: { xs: 32, md: 42 } }}>
+          <Typography variant="h1" component="h2" sx={{ mb: 1, fontSize: { xs: 32, md: 42 }, color: '#ffffff' }}>
             Subscribe to Our News Letter
           </Typography>
-          <Typography sx={{ mb: 6 }}>Subscribe to our newsletter to get information about our courses.</Typography>
+          <Typography sx={{ mb: 6, color: '#ffffff' }}>Subscribe to our newsletter to get information about our courses.</Typography>
 
           <Box
             sx={{
