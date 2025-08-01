@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { Testimonial } from '@/interfaces/testimonial'
-import { getImagePath } from '@/utils/paths'
+
 
 interface Props {
   item: Testimonial
@@ -45,7 +45,7 @@ const TestimonialItem: FC<Props> = ({ item }) => {
           }}
         >
           <Image
-            src={getImagePath(`/images/avatars/${item.user.photo}`)}
+            src={`/SBA/images/avatars/${item.user.photo}`}
             width={100}
             height={100}
             quality={97}

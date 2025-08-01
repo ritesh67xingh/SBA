@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import { styled } from '@mui/material/styles'
 import IconArrowBack from '@mui/icons-material/ArrowBack'
-import { getImagePath } from '@/utils/paths'
+
 import IconArrowForward from '@mui/icons-material/ArrowForward'
 
 import { TestimonialItem } from '@/components/testimonial'
@@ -100,7 +100,7 @@ const HomeTestimonial: FC = () => {
                   }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                                      <img src={getImagePath("/images/headline-curve.svg")} alt="Headline curve" />
+                                      <img src="/SBA/images/headline-curve.svg" alt="Headline curve" />
                 </Box>
               </Typography>
               Say
@@ -116,7 +116,7 @@ const HomeTestimonial: FC = () => {
           </Grid>
           <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
             <Box sx={{ width: { xs: '100%', md: '90%' } }}>
-                              <Image src={getImagePath("/images/home-testimonial.png")} width={520} height={540} quality={97} alt="Testimonial img" />
+                              <Image src="/SBA/images/home-testimonial.png" width={520} height={540} quality={97} alt="Testimonial img" />
             </Box>
           </Grid>
         </Grid>

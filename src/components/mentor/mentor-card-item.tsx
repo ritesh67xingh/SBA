@@ -4,7 +4,6 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 
 import { Mentor } from '@/interfaces/mentor'
-import { getImagePath } from '@/utils/paths'
 
 interface Props {
   item: Mentor
@@ -38,7 +37,7 @@ const MentorCardItem: FC<Props> = ({ item }) => {
             mb: 2,
           }}
         >
-          <Image src={getImagePath(item.photo as string)} width={570} height={427} alt={'Mentor ' + item.id} />
+          <Image src={item.photo as string} width={570} height={427} alt={'Mentor ' + item.id} />
         </Box>
         <Box sx={{ mb: 2 }}>
           <Typography component="h2" variant="h4" sx={{ fontSize: '1.4rem' }}>
@@ -50,7 +49,7 @@ const MentorCardItem: FC<Props> = ({ item }) => {
           </Typography>
           <Box sx={{ '& img': { height: 26 } }}>
             {/* eslint-disable-next-line */}
-            <img src={getImagePath(item.company?.logo || '')} alt={item.company?.name + ' logo'} />
+            <img src={item.company?.logo || ''} alt={item.company?.name + ' logo'} />
           </Box>
         </Box>
       </Box>

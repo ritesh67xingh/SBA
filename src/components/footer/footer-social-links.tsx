@@ -2,33 +2,32 @@ import React, { FC } from 'react'
 import Box from '@mui/material/Box'
 import Link from '@mui/material/Link'
 import { SocialLink } from '@/interfaces/social-link'
-import { getImagePath } from '@/utils/paths'
 
 export const socialLinks: SocialLink[] = [
   {
     name: 'Instagram',
     link: '#',
-    icon: '/images/icons/instagram.svg',
+    icon: '/SBA/images/icons/instagram.svg',
   },
   {
     name: 'YouTube',
     link: '#',
-    icon: '/images/icons/youtube.svg',
+    icon: '/SBA/images/icons/youtube.svg',
   },
   {
     name: 'Twitter',
     link: '#',
-    icon: '/images/icons/twitter.svg',
+    icon: '/SBA/images/icons/twitter.svg',
   },
   {
     name: 'Dribbble',
     link: 'https://dribbble.com/shots/18114471-Coursespace-Online-Course-Landing-Page',
-    icon: '/images/icons/dribbble.svg',
+    icon: '/SBA/images/icons/dribbble.svg',
   },
   {
     name: 'Github',
     link: 'https://github.com/hiriski/coursespace-landing-page',
-    icon: '/images/icons/github.svg',
+    icon: '/SBA/images/icons/github.svg',
   },
 ]
 
@@ -68,7 +67,7 @@ const SocialLinkItem: FC<SocialLinkItemProps> = ({ item }) => (
       href={item.link}
     >
       {/* eslint-disable-next-line */}
-      <img src={getImagePath(item.icon || '')} alt={item.name + 'icon'} />
+      <img src={item.icon || ''} alt={item.name + 'icon'} />
     </Link>
   </Box>
 )
