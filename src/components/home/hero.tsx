@@ -42,8 +42,8 @@ const ExpItem: FC<ExpItemProps> = ({ item }) => {
 const HomeHero: FC = () => {
   const [openModal, setOpenModal] = useState(false)
 
-  const handleOpen = () => setOpenModal(true)
-  const handleClose = () => setOpenModal(false)
+  const handleOpen = (): void => setOpenModal(true)
+  const handleClose = (): void => setOpenModal(false)
 
   useEffect(() => {
     const timer1 = setTimeout(() => {
