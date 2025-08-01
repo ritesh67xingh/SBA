@@ -54,16 +54,14 @@ const Navigation: FC = () => {
           }}
         >
           <Box
-            className="curve-line"
             sx={{
               position: 'absolute',
-              top: { xs: '100%', sm: '100%', md: 12 },
+              bottom: { xs: -4, sm: -6, md: -8 },
               transform: 'rotate(3deg)',
-              width: 'auto',
               '& img': { 
-                width: { xs: 30, sm: 35, md: 44 }, 
+                width: { xs: '100%', sm: '100%', md: 44 }, 
                 height: 'auto',
-                maxWidth: 'none',
+                maxWidth: { xs: '100%', sm: '100%', md: 'none' },
               },
             }}
           >

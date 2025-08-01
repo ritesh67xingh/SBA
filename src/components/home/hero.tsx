@@ -124,18 +124,16 @@ const HomeHero: FC = () => {
                   >
                     Master{' '}
                     <Box
-                      className="curve-line"
                       sx={{
                         position: 'absolute',
-                        top: { xs: '100%', sm: '100%', md: 24 },
+                        bottom: { xs: -8, sm: -10, md: -12 },
                         left: { xs: 0, sm: 0, md: 2 },
                         transform: 'rotate(3deg)',
                         zIndex: 1,
-                        width: 'auto',
                         '& img': {
-                          width: { xs: 120, sm: 140, md: 160 },
-                          height: { xs: 'auto', sm: 'auto', md: 40 },
-                          maxWidth: 'none',
+                          width: { xs: '100%', sm: '100%', md: 160 },
+                          height: 'auto',
+                          maxWidth: { xs: '100%', sm: '100%', md: 'none' },
                         },
                       }}
                     >

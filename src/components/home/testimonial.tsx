@@ -98,16 +98,14 @@ const HomeTestimonial: FC = () => {
               >
                 Students{' '}
                 <Box
-                  className="curve-line"
                   sx={{
                     position: 'absolute',
-                    top: { xs: '100%', sm: '100%', md: 28 },
+                    bottom: { xs: -8, sm: -10, md: -12 },
                     left: { xs: 0, sm: 0, md: 2 },
-                    width: 'auto',
                     '& img': { 
-                      width: { xs: 130, sm: 150, md: 175 }, 
+                      width: { xs: '100%', sm: '100%', md: 175 }, 
                       height: 'auto',
-                      maxWidth: 'none',
+                      maxWidth: { xs: '100%', sm: '100%', md: 'none' },
                     },
                   }}
                 >
