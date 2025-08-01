@@ -97,15 +97,21 @@ const HomeTestimonial: FC = () => {
               >
                 Students{' '}
                 <Box
+                  className="curve-line"
                   sx={{
                     position: 'absolute',
-                    top: { xs: 20, md: 28 },
-                    left: 2,
-                    '& img': { width: { xs: 130, md: 175 }, height: 'auto' },
+                    top: { xs: '100%', sm: '100%', md: 28 },
+                    left: { xs: 0, sm: 0, md: 2 },
+                    width: { xs: '100%', sm: '100%', md: 'auto' },
+                    '& img': { 
+                      width: { xs: '100%', sm: '100%', md: 175 }, 
+                      height: 'auto',
+                      maxWidth: { xs: '100%', sm: '100%', md: 'none' },
+                    },
                   }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                                      <img src="/SBA/images/headline-curve.svg" alt="Headline curve" />
+                                      <img src="/SBA/images/headline-curve-responsive.svg" alt="Headline curve" className="crisp-image" />
                 </Box>
               </Typography>
               Say
@@ -122,7 +128,18 @@ const HomeTestimonial: FC = () => {
           </Grid>
           <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
             <Box sx={{ width: { xs: '100%', md: '90%' } }}>
-                              <img src="/SBA/images/home-testimonial.png" width={350} height={400} alt="Testimonial img" style={{ maxWidth: '100%', height: 'auto' }} />
+                              <img 
+                                src="/SBA/images/home-testimonial.png" 
+                                width={350} 
+                                height={400} 
+                                alt="Testimonial img" 
+                                style={{ 
+                                  maxWidth: '100%', 
+                                  height: 'auto',
+                                  imageRendering: 'crisp-edges',
+                                  objectFit: 'cover'
+                                }} 
+                              />
             </Box>
           </Grid>
         </Grid>

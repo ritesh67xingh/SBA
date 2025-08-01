@@ -123,15 +123,22 @@ const HomeHero: FC = () => {
                   >
                     Master{' '}
                     <Box
+                      className="curve-line"
                       sx={{
                         position: 'absolute',
-                        top: { xs: 16, md: 24 },
-                        left: 2,
+                        top: { xs: '100%', sm: '100%', md: 24 },
+                        left: { xs: 0, sm: 0, md: 2 },
                         transform: 'rotate(3deg)',
                         zIndex: 1,
+                        width: { xs: '100%', sm: '100%', md: 'auto' },
+                        '& img': {
+                          width: { xs: '100%', sm: '100%', md: 160 },
+                          height: { xs: 'auto', sm: 'auto', md: 40 },
+                          maxWidth: { xs: '100%', sm: '100%', md: 'none' },
+                        },
                       }}
                     >
-                      <img src="/SBA/images/headline-curve.svg" alt="Headline curve" width={160} height={40} />
+                      <img src="/SBA/images/headline-curve-responsive.svg" alt="Headline curve" className="crisp-image" />
                     </Box>
                   </Typography>
                   your{' '}
@@ -244,7 +251,18 @@ const HomeHero: FC = () => {
               </Box>
             </Box>
             <Box sx={{ lineHeight: 0 }}>
-                              <img src="/SBA/images/home-hero.jpg" width={500} height={400} alt="Hero img" style={{ maxWidth: '100%', height: 'auto' }} />
+                              <img 
+                                src="/SBA/images/home-hero.jpg" 
+                                width={500} 
+                                height={400} 
+                                alt="Hero img" 
+                                style={{ 
+                                  maxWidth: '100%', 
+                                  height: 'auto',
+                                  imageRendering: 'crisp-edges',
+                                  objectFit: 'cover'
+                                }} 
+                              />
             </Box>
           </Grid>
         </Grid>

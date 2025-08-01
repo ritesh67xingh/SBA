@@ -49,7 +49,18 @@ const HomeFeature: FC = () => {
               position: 'relative',
               px: { xs: 2, sm: 0 }
             }}>
-              <img src="/SBA/images/home-feature.png" width={400} height={350} alt="Feature img" style={{ maxWidth: '100%', height: 'auto' }} />
+              <img 
+                src="/SBA/images/home-feature.png" 
+                width={400} 
+                height={350} 
+                alt="Feature img" 
+                style={{ 
+                  maxWidth: '100%', 
+                  height: 'auto',
+                  imageRendering: 'crisp-edges',
+                  objectFit: 'cover'
+                }} 
+              />
               <Box
                 sx={{
                   position: 'absolute',
@@ -182,16 +193,22 @@ const HomeFeature: FC = () => {
               >
                 Learning <br />
                 <Box
+                  className="curve-line"
                   sx={{
                     position: 'absolute',
-                    top: { xs: 20, md: 28 },
+                    top: { xs: '100%', sm: '100%', md: 28 },
                     transform: 'rotate(3deg)',
-                    left: 2,
-                    '& img': { width: { xs: 140, md: 175 }, height: 'auto' },
+                    left: { xs: 0, sm: 0, md: 2 },
+                    width: { xs: '100%', sm: '100%', md: 'auto' },
+                    '& img': { 
+                      width: { xs: '100%', sm: '100%', md: 175 }, 
+                      height: 'auto',
+                      maxWidth: { xs: '100%', sm: '100%', md: 'none' },
+                    },
                   }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/SBA/images/headline-curve.svg" alt="Headline curve" />
+                  <img src="/SBA/images/headline-curve-responsive.svg" alt="Headline curve" className="crisp-image" />
                 </Box>
               </Typography>
               Enjoyable

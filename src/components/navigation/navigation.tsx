@@ -53,15 +53,21 @@ const Navigation: FC = () => {
           }}
         >
           <Box
+            className="curve-line"
             sx={{
               position: 'absolute',
-              top: 12,
+              top: { xs: '100%', sm: '100%', md: 12 },
               transform: 'rotate(3deg)',
-              '& img': { width: 44, height: 'auto' },
+              width: { xs: '100%', sm: '100%', md: 'auto' },
+              '& img': { 
+                width: { xs: '100%', sm: '100%', md: 44 }, 
+                height: 'auto',
+                maxWidth: { xs: '100%', sm: '100%', md: 'none' },
+              },
             }}
           >
             {/* eslint-disable-next-line */}
-                            <img src="/SBA/images/headline-curve.svg" alt="Headline curve" />
+                            <img src="/SBA/images/headline-curve-responsive.svg" alt="Headline curve" className="crisp-image" />
           </Box>
           {label}
         </Box>

@@ -1,0 +1,38 @@
+/* Responsive curve line styles */
+.curve-line-container {
+  position: relative;
+  display: inline-block;
+}
+
+.curve-line {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: -8px;
+  left: 0;
+  z-index: 1;
+  transform: rotate(3deg);
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 768px) {
+  .curve-line {
+    bottom: -6px;
+    transform: rotate(2deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .curve-line {
+    bottom: -4px;
+    transform: rotate(1deg);
+  }
+}
+
+/* Ensure images are crisp on all devices */
+.crisp-image {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
