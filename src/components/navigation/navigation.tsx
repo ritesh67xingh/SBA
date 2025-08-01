@@ -21,7 +21,6 @@ const Navigation: FC = () => {
           spy={true}
           smooth={true}
           duration={350}
-          className="responsive-text-container"
           sx={{
             position: 'relative',
             color: 'text.disabled',
@@ -58,10 +57,11 @@ const Navigation: FC = () => {
               position: 'absolute',
               bottom: { xs: -4, sm: -6, md: -8 },
               transform: 'rotate(3deg)',
+              width: '100%',
               '& img': { 
-                width: { xs: '100%', sm: '100%', md: 44 }, 
+                width: '100%',
                 height: 'auto',
-                maxWidth: { xs: '100%', sm: '100%', md: 'none' },
+                display: 'block',
               },
             }}
           >

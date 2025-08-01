@@ -13,3 +13,19 @@
   position: relative;
   display: inline-block;
 }
+
+/* Ensure curve lines are visible on mobile */
+@media (max-width: 768px) {
+  .crisp-image {
+    min-width: 60px;
+    min-height: 8px;
+  }
+}
+
+/* Better visibility for small screens */
+@media (max-width: 480px) {
+  .crisp-image {
+    min-width: 50px;
+    min-height: 6px;
+  }
+}

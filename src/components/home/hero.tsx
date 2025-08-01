@@ -113,27 +113,28 @@ const HomeHero: FC = () => {
                 >
                   <Typography
                     component="mark"
-                    className="responsive-text-container"
                     sx={{
                       position: 'relative',
                       color: '#1877F2',
                       fontSize: 'inherit',
                       fontWeight: 'inherit',
                       backgroundColor: 'unset',
+                      display: 'inline-block',
                     }}
                   >
                     Master{' '}
                     <Box
                       sx={{
                         position: 'absolute',
-                        bottom: { xs: -8, sm: -10, md: -12 },
-                        left: { xs: 0, sm: 0, md: 2 },
+                        bottom: { xs: -6, sm: -8, md: -10 },
+                        left: 0,
                         transform: 'rotate(3deg)',
                         zIndex: 1,
+                        width: '100%',
                         '& img': {
-                          width: { xs: '100%', sm: '100%', md: 160 },
+                          width: '100%',
                           height: 'auto',
-                          maxWidth: { xs: '100%', sm: '100%', md: 'none' },
+                          display: 'block',
                         },
                       }}
                     >
