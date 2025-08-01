@@ -18,3 +18,20 @@ export const getAssetPath = (path: string): string => {
   
   return path;
 };
+
+// Simplified asset path function for images
+export const getImagePath = (path: string): string => {
+  // For GitHub Pages, we need to handle the base path correctly
+  if (typeof window !== 'undefined') {
+    const basePath = (window as any).__NEXT_DATA__?.basePath || '';
+    return basePath + path;
+  }
+  
+  const isProduction = process.env.NODE_ENV === 'production';
+  if (isProduction) {
+    const repo = 'SBA';
+    return `/${repo}${path}`;
+  }
+  
+  return path;
+};

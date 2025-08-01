@@ -8,7 +8,7 @@ import Dialog from '@mui/material/Dialog'
 import IconButton from '@mui/material/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
 import { StyledButton } from '@/components/styled-button'
-import { getAssetPath } from '@/utils/paths'
+import { getImagePath } from '@/utils/paths'
 
 interface Exp {
   label: string
@@ -103,10 +103,10 @@ const HomeHero: FC = () => {
                         top: { xs: 16, md: 24 },
                         left: 2,
                         transform: 'rotate(3deg)',
-                        '& img': { width: { xs: 120, md: 160 }, height: 'auto' },
+                        zIndex: 1,
                       }}
                     >
-                      <img src={getAssetPath("/images/headline-curve.svg")} alt="Headline curve" />
+                      <Image src={getImagePath("/images/headline-curve.svg")} alt="Headline curve" width={160} height={40} />
                     </Box>
                   </Typography>
                   your{' '}
@@ -122,6 +122,7 @@ const HomeHero: FC = () => {
                         right: -18,
                         width: { xs: 20, md: 28 },
                         height: 'auto',
+                        zIndex: 2,
                       },
                     }}
                   >
@@ -201,7 +202,7 @@ const HomeHero: FC = () => {
                   '& img': { width: '32px !important', height: 'auto' },
                 }}
               >
-                                  <Image src={getAssetPath("/images/certificate.png")} alt="Certificate icon" width={50} height={50} quality={97} />
+                                  <Image src={getImagePath("/images/certificate.png")} alt="Certificate icon" width={50} height={50} quality={97} />
               </Box>
               <Box>
                 <Typography
@@ -216,7 +217,7 @@ const HomeHero: FC = () => {
               </Box>
             </Box>
             <Box sx={{ lineHeight: 0 }}>
-              <Image src={getAssetPath("/images/home-hero.jpg")} width={775} height={787} alt="Hero img" />
+              <Image src={getImagePath("/images/home-hero.jpg")} width={775} height={787} alt="Hero img" />
             </Box>
           </Grid>
         </Grid>
