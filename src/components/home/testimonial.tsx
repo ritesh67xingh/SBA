@@ -14,13 +14,13 @@ import IconArrowForward from '@mui/icons-material/ArrowForward'
 import { TestimonialItem } from '@/components/testimonial'
 import { data } from './testimonial.data'
 
-interface SliderArrowArrow {
+interface SliderArrowProps {
   onClick?: () => void
   type: 'next' | 'prev'
-  className?: 'string'
+  className?: string
 }
 
-const SliderArrow: FC<SliderArrowArrow> = (props) => {
+const SliderArrow: FC<SliderArrowProps> = (props) => {
   const { onClick, type, className } = props
   return (
     <IconButton
@@ -53,7 +53,7 @@ const StyledSlickContainer = styled('div')(() => ({
 const HomeTestimonial: FC = () => {
   const sliderRef = useRef(null)
 
-  const sliderConfig: Settings = {
+  const sliderConfig: any = {
     infinite: true,
     autoplay: true,
     speed: 300,
@@ -107,11 +107,11 @@ const HomeTestimonial: FC = () => {
             </Typography>
 
             <StyledSlickContainer>
-              <Slider ref={sliderRef} {...sliderConfig}>
-                {data.map((item, index) => (
+              {React.createElement(Slider as any, { ...sliderConfig, ref: sliderRef },
+                data.map((item, index) => (
                   <TestimonialItem key={String(index)} item={item} />
-                ))}
-              </Slider>
+                ))
+              )}
             </StyledSlickContainer>
           </Grid>
           <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'block' } }}>

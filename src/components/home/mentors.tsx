@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import Box from '@mui/material/Box'
-import Slider, { Settings } from 'react-slick'
+import Slider from 'react-slick'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
@@ -11,13 +11,13 @@ import IconArrowForward from '@mui/icons-material/ArrowForward'
 import { MentorCardItem } from '@/components/mentor'
 import { data } from './mentors.data'
 
-interface SliderArrowArrow {
+interface SliderArrowProps {
   onClick?: () => void
   type: 'next' | 'prev'
-  className?: 'string'
+  className?: string
 }
 
-const SliderArrow: FC<SliderArrowArrow> = (props) => {
+const SliderArrow: FC<SliderArrowProps> = (props) => {
   const { onClick, type, className } = props
   return (
     <IconButton
@@ -61,7 +61,7 @@ const HomeOurMentors: FC = () => {
   const { breakpoints } = useTheme()
   const matchMobileView = useMediaQuery(breakpoints.down('md'))
 
-  const sliderConfig: Settings = {
+  const sliderConfig: any = {
     infinite: true,
     // autoplay: true,
     speed: 300,
@@ -70,7 +70,7 @@ const HomeOurMentors: FC = () => {
     prevArrow: <SliderArrow type="prev" />,
     nextArrow: <SliderArrow type="next" />,
     dots: true,
-    appendDots: (dots) => <StyledDots>{dots}</StyledDots>,
+    appendDots: (dots: any) => <StyledDots>{dots}</StyledDots>,
     customPaging: () => (
       <Box sx={{ height: 8, width: 30, backgroundColor: 'divider', display: 'inline-block', borderRadius: 4 }} />
     ),
@@ -96,11 +96,11 @@ const HomeOurMentors: FC = () => {
           Our Expert Mentors
         </Typography>
 
-        <Slider {...sliderConfig}>
-          {data.map((item) => (
+        {React.createElement(Slider as any, sliderConfig,
+          data.map((item) => (
             <MentorCardItem key={String(item.id)} item={item} />
-          ))}
-        </Slider>
+          ))
+        )}
       </Container>
     </Box>
   )

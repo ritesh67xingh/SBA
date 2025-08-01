@@ -9,7 +9,7 @@ const Navigation: FC = () => {
     <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}>
       {navigations.map(({ path: destination, label }) => (
         <Box
-          component={ScrollLink}
+          component={ScrollLink as any}
           key={destination}
           activeClass="current"
           to={destination}

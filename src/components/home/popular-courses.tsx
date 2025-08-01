@@ -12,13 +12,13 @@ import IconArrowForward from '@mui/icons-material/ArrowForward'
 import { data } from './popular-course.data'
 import { CourseCardItem } from '@/components/course'
 
-interface SliderArrowArrow {
+interface SliderArrowProps {
   onClick?: () => void
   type: 'next' | 'prev'
-  className?: 'string'
+  className?: string
 }
 
-const SliderArrow: FC<SliderArrowArrow> = (props) => {
+const SliderArrow: FC<SliderArrowProps> = (props) => {
   const { onClick, type, className } = props
   return (
     <IconButton
@@ -62,7 +62,7 @@ const HomePopularCourse: FC = () => {
   const { breakpoints } = useTheme()
   const matchMobileView = useMediaQuery(breakpoints.down('md'))
 
-  const sliderConfig: Settings = {
+  const sliderConfig: any = {
     infinite: true,
     autoplay: true,
     speed: 300,
@@ -71,7 +71,7 @@ const HomePopularCourse: FC = () => {
     prevArrow: <SliderArrow type="prev" />,
     nextArrow: <SliderArrow type="next" />,
     dots: true,
-    appendDots: (dots) => <StyledDots>{dots}</StyledDots>,
+    appendDots: (dots: any) => <StyledDots>{dots}</StyledDots>,
     customPaging: () => (
       <Box sx={{ height: 8, width: 30, backgroundColor: 'divider', display: 'inline-block', borderRadius: 4 }} />
     ),
@@ -108,11 +108,11 @@ const HomePopularCourse: FC = () => {
           </Grid>
 
           <Grid item xs={12} md={9}>
-            <Slider {...sliderConfig}>
-              {data.map((item) => (
+            {React.createElement(Slider as any, sliderConfig,
+              data.map((item) => (
                 <CourseCardItem key={String(item.id)} item={item} />
-              ))}
-            </Slider>
+              ))
+            )}
           </Grid>
         </Grid>
       </Container>
