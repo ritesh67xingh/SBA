@@ -37,7 +37,7 @@ const MentorCardItem: FC<Props> = ({ item }) => {
             mb: 2,
           }}
         >
-          <img src={item.photo as string} width={570} height={427} alt={'Mentor ' + item.id} />
+          <img src={item.photo as string} width={300} height={200} alt={'Mentor ' + item.id} style={{ width: '100%', height: 'auto' }} />
         </Box>
         <Box sx={{ mb: 2 }}>
           <Typography component="h2" variant="h4" sx={{ fontSize: '1.4rem' }}>

@@ -43,7 +43,7 @@ const CourseCardItem: FC<Props> = ({ item }) => {
             mb: 2,
           }}
         >
-          <img src={item.cover} width={760} height={760} alt={'Course ' + item.id} />
+          <img src={item.cover} width={300} height={200} alt={'Course ' + item.id} style={{ width: '100%', height: 'auto' }} />
         </Box>
         <Box sx={{ mb: 2 }}>
           <Typography component="h2" variant="h5" sx={{ mb: 2, height: 56, overflow: 'hidden', fontSize: '1.2rem' }}>

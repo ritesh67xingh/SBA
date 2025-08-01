@@ -116,7 +116,7 @@ const HomeTestimonial: FC = () => {
           </Grid>
           <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
             <Box sx={{ width: { xs: '100%', md: '90%' } }}>
-                              <img src="/SBA/images/home-testimonial.png" width={520} height={540} alt="Testimonial img" />
+                              <img src="/SBA/images/home-testimonial.png" width={350} height={400} alt="Testimonial img" style={{ maxWidth: '100%', height: 'auto' }} />
             </Box>
           </Grid>
         </Grid>
