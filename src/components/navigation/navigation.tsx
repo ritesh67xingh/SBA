@@ -59,11 +59,11 @@ const Navigation: FC = () => {
               position: 'absolute',
               top: { xs: '100%', sm: '100%', md: 12 },
               transform: 'rotate(3deg)',
-              width: { xs: '100%', sm: '100%', md: 'auto' },
+              width: 'auto',
               '& img': { 
-                width: { xs: '100%', sm: '100%', md: 44 }, 
+                width: { xs: 30, sm: 35, md: 44 }, 
                 height: 'auto',
-                maxWidth: { xs: '100%', sm: '100%', md: 'none' },
+                maxWidth: 'none',
               },
             }}
           >

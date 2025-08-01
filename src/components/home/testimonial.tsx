@@ -103,11 +103,11 @@ const HomeTestimonial: FC = () => {
                     position: 'absolute',
                     top: { xs: '100%', sm: '100%', md: 28 },
                     left: { xs: 0, sm: 0, md: 2 },
-                    width: { xs: '100%', sm: '100%', md: 'auto' },
+                    width: 'auto',
                     '& img': { 
-                      width: { xs: '100%', sm: '100%', md: 175 }, 
+                      width: { xs: 130, sm: 150, md: 175 }, 
                       height: 'auto',
-                      maxWidth: { xs: '100%', sm: '100%', md: 'none' },
+                      maxWidth: 'none',
                     },
                   }}
                 >

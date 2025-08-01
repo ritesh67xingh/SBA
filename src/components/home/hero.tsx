@@ -131,11 +131,11 @@ const HomeHero: FC = () => {
                         left: { xs: 0, sm: 0, md: 2 },
                         transform: 'rotate(3deg)',
                         zIndex: 1,
-                        width: { xs: '100%', sm: '100%', md: 'auto' },
+                        width: 'auto',
                         '& img': {
-                          width: { xs: '100%', sm: '100%', md: 160 },
+                          width: { xs: 120, sm: 140, md: 160 },
                           height: { xs: 'auto', sm: 'auto', md: 40 },
-                          maxWidth: { xs: '100%', sm: '100%', md: 'none' },
+                          maxWidth: 'none',
                         },
                       }}
                     >

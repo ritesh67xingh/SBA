@@ -6,7 +6,7 @@
 
 .curve-line {
   position: absolute;
-  width: 100%;
+  width: auto;
   height: auto;
   bottom: -8px;
   left: 0;
@@ -20,7 +20,7 @@
   .curve-line {
     bottom: -6px;
     transform: rotate(2deg);
-    width: 100%;
+    width: auto;
   }
 }
 
@@ -28,7 +28,7 @@
   .curve-line {
     bottom: -4px;
     transform: rotate(1deg);
-    width: 100%;
+    width: auto;
   }
 }
 
@@ -37,7 +37,7 @@
   .curve-line {
     bottom: -3px;
     transform: rotate(0.5deg);
-    width: 100%;
+    width: auto;
   }
 }
 
@@ -55,14 +55,14 @@
 .responsive-text-container {
   position: relative;
   display: inline-block;
-  width: 100%;
+  width: auto;
 }
 
 /* Ensure curve lines scale properly with text */
 .curve-line img {
-  width: 100% !important;
+  width: auto !important;
   height: auto !important;
-  max-width: 100% !important;
+  max-width: none !important;
   display: block;
 }
 
@@ -73,7 +73,7 @@
     top: 100% !important;
     left: 0 !important;
     right: auto !important;
-    width: 100% !important;
+    width: auto !important;
   }
 }
 
