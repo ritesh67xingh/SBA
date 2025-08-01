@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Container from '@mui/material/Container'
@@ -106,7 +106,7 @@ const HomeHero: FC = () => {
                         zIndex: 1,
                       }}
                     >
-                      <Image src="/SBA/images/headline-curve.svg" alt="Headline curve" width={160} height={40} />
+                      <img src="/SBA/images/headline-curve.svg" alt="Headline curve" width={160} height={40} />
                     </Box>
                   </Typography>
                   your{' '}
@@ -202,7 +202,7 @@ const HomeHero: FC = () => {
                   '& img': { width: '32px !important', height: 'auto' },
                 }}
               >
-                                  <Image src="/SBA/images/certificate.png" alt="Certificate icon" width={50} height={50} quality={97} />
+                                  <img src="/SBA/images/certificate.png" alt="Certificate icon" width={50} height={50} />
               </Box>
               <Box>
                 <Typography
@@ -217,7 +217,7 @@ const HomeHero: FC = () => {
               </Box>
             </Box>
             <Box sx={{ lineHeight: 0 }}>
-              <Image src="/SBA/images/home-hero.jpg" width={775} height={787} alt="Hero img" />
+                              <img src="/SBA/images/home-hero.jpg" width={775} height={787} alt="Hero img" />
             </Box>
           </Grid>
         </Grid>

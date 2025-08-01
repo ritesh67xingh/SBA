@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import { styled } from '@mui/material/styles'
@@ -43,7 +43,7 @@ const HomeFeature: FC = () => {
         <Grid container spacing={3}>
           <Grid item xs={12} md={5}>
             <Box sx={{ position: 'relative' }}>
-              <Image src="/SBA/images/home-feature.png" width={650} height={678} quality={97} alt="Feature img" />
+              <img src="/SBA/images/home-feature.png" width={650} height={678} alt="Feature img" />
               <Box
                 sx={{
                   position: 'absolute',

@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
 import Box from '@mui/material/Box'
 import Rating from '@mui/material/Rating'
 import Typography from '@mui/material/Typography'
@@ -43,7 +43,7 @@ const CourseCardItem: FC<Props> = ({ item }) => {
             mb: 2,
           }}
         >
-          <Image src={item.cover} width={760} height={760} alt={'Course ' + item.id} />
+          <img src={item.cover} width={760} height={760} alt={'Course ' + item.id} />
         </Box>
         <Box sx={{ mb: 2 }}>
           <Typography component="h2" variant="h5" sx={{ mb: 2, height: 56, overflow: 'hidden', fontSize: '1.2rem' }}>

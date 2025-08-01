@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { Testimonial } from '@/interfaces/testimonial'
@@ -44,11 +44,10 @@ const TestimonialItem: FC<Props> = ({ item }) => {
             },
           }}
         >
-          <Image
+          <img
             src={`/SBA/images/avatars/${item.user.photo}`}
             width={100}
             height={100}
-            quality={97}
             alt={item.user.name}
           />
         </Box>
