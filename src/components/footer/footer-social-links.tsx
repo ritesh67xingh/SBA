@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import Box from '@mui/material/Box'
 import Link from '@mui/material/Link'
 import { SocialLink } from '@/interfaces/social-link'
+import { getImagePath } from '@/utils/paths'
 
 export const socialLinks: SocialLink[] = [
   {
@@ -67,7 +68,7 @@ const SocialLinkItem: FC<SocialLinkItemProps> = ({ item }) => (
       href={item.link}
     >
       {/* eslint-disable-next-line */}
-      <img src={item.icon} alt={item.name + 'icon'} />
+      <img src={getImagePath(item.icon || '')} alt={item.name + 'icon'} />
     </Link>
   </Box>
 )
