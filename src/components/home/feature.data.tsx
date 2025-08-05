@@ -13,7 +13,7 @@ interface Data {
 export const data: Data[] = [
   {
     title: 'Dual Teacher Support System',
-    description: 'Master + Mentor Teachers in every class for expert delivery and personal guidance.',
+    description: 'Master + Mentor Teachers for expert teaching and personalized support.',
     icon: <GroupsIcon />,
   },
   {
@@ -23,7 +23,7 @@ export const data: Data[] = [
   },
   {
     title: 'Life Skills',
-    description: 'Builds communication, empathy, and leadership through teamwork and projects.',
+    description: 'Boosts communication, empathy, and leadership through collaboration.',
     icon: <EmojiObjectsIcon />,
   },
   {
