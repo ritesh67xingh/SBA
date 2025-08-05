@@ -11,6 +11,14 @@ interface Props {
   item: Course
 }
 
+// ✅ Added this function
+function formatNumber(n: number): string {
+  if (n >= 1000) {
+    return (n / 1000).toFixed(n % 1000 === 0 ? 0 : 1) + 'k'
+  }
+  return n.toString()
+}
+
 const CourseCardItem: FC<Props> = ({ item }) => {
   return (
     <Box
@@ -52,7 +60,7 @@ const CourseCardItem: FC<Props> = ({ item }) => {
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Rating name="rating-course" value={item.rating} max={5} sx={{ color: '#ffce31', mr: 1 }} readOnly />
             <Typography component="span" variant="h5">
-              ({item.ratingCount})
+              ({formatNumber(item.ratingCount)})
             </Typography>
           </Box>
         </Box>
