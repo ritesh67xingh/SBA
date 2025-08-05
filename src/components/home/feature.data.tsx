@@ -13,17 +13,17 @@ interface Data {
 export const data: Data[] = [
   {
     title: 'Dual Teacher Support System',
-    description: '(Master Teacher + Mentor Teacher) Every class is powered by our two-teacher model',
+    description: 'Master + Mentor Teachers in every class for expert delivery and personal guidance.',
     icon: <GroupsIcon />,
   },
   {
     title: 'Real-World Learning',
-    description: 'Every lesson connects to real life — hands-on projects tied to everyday contexts',
+    description: 'Hands-on projects with real-life context to build practical problem-solving skills.',
     icon: <SchoolIcon />,
   },
   {
     title: 'Life Skills',
-    description: 'We nurture communication & leadership through teamwork & projects, equipping kids to thrive tomorrow',
+    description: 'Builds communication, empathy, and leadership through teamwork and projects.',
     icon: <EmojiObjectsIcon />,
   },
   {
