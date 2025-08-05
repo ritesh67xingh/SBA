@@ -141,7 +141,7 @@ const HomeHero: FC = () => {
                       <img src="/SBA/images/headline-curve-responsive.svg" alt="Headline curve" className="crisp-image" />
                     </Box>
                   </Typography>{' '}
-                  your
+                  your{' '}
                   <Typography
                     component="span"
                     sx={{
