@@ -78,25 +78,25 @@ const HomeFeature: FC = () => {
                 }}
               >
                 <Typography variant="h5" sx={{ mb: 1 }}>
-                  Lorem ipsum dolor
+                  Master Your Skills with SBA
                 </Typography>
                 <Box sx={{ mb: 2 }}>
                   <Typography variant="subtitle1" color="text.secondary">
-                    UI/UI Design
+                    Math Problem Solving
                   </Typography>
-                  <BorderLinearProgress variant="determinate" color="inherit" value={65} order={1} />
+                  <BorderLinearProgress variant="determinate" color="inherit" value={95} order={1} />
                 </Box>
                 <Box sx={{ mb: 2 }}>
                   <Typography variant="subtitle1" color="text.secondary">
-                    Mobile Development
+                    Science Concepts
                   </Typography>
-                  <BorderLinearProgress variant="determinate" color="inherit" value={40} order={2} />
+                  <BorderLinearProgress variant="determinate" color="inherit" value={85} order={2} />
                 </Box>
                 <Box sx={{ mb: 2 }}>
                   <Typography variant="subtitle1" color="text.secondary">
-                    Web Development
+                    Logical Reasoning
                   </Typography>
-                  <BorderLinearProgress variant="determinate" color="inherit" value={50} order={3} />
+                  <BorderLinearProgress variant="determinate" color="inherit" value={80} order={3} />
                 </Box>
               </Box>
 
@@ -126,9 +126,9 @@ const HomeFeature: FC = () => {
                     flexDirection: 'column',
                   }}
                 >
-                  <Typography sx={{ fontWeight: 600, lineHeight: 1 }}>Lorem ipsum</Typography>
+                  <Typography sx={{ fontWeight: 600, lineHeight: 1 }}>Student Performance</Typography>
                   <Typography variant="subtitle1" sx={{ mb: 1, color: 'text.disabled' }}>
-                    Lorem ipsum
+                    Overall Performance
                   </Typography>
                   <Box
                     sx={{
@@ -141,7 +141,7 @@ const HomeFeature: FC = () => {
                     }}
                   >
                     <Typography variant="h4" sx={{ color: '#1877F2' }}>
-                      75%
+                      85%
                     </Typography>
                     <CircularProgress
                       sx={{ position: 'absolute', color: 'divider' }}
@@ -154,8 +154,8 @@ const HomeFeature: FC = () => {
                       disableShrink
                       thickness={2}
                       variant="determinate"
-                      value={75}
-                      size={85}
+                      value={85}
+                      size={95}
                       sx={{ transform: 'rotate(96deg) !important', color: '#1877F2', position: 'absolute' }}
                     />
                   </Box>
@@ -221,8 +221,7 @@ const HomeFeature: FC = () => {
               fontSize: { xs: 14, sm: 16, md: 'inherit' },
               lineHeight: { xs: 1.5, md: 1.6 }
             }}>
-              Set the way of learning according to your wishes with some of the benefits that you get us, so you on
-              enjoy the lessons that we provide.
+              Empower your child’s learning with SBA’s smart methods, AI-powered tools, and live support to help them grow in every subject.
             </Typography>
 
             <Grid container spacing={{ xs: 1.5, sm: 2, md: 2 }} sx={{ ml: { xs: 0, md: 2 } }}>
