@@ -155,7 +155,7 @@ const HomeFeature: FC = () => {
                       thickness={2}
                       variant="determinate"
                       value={85}
-                      size={95}
+                      size={85}
                       sx={{ transform: 'rotate(96deg) !important', color: '#1877F2', position: 'absolute' }}
                     />
                   </Box>
