@@ -31,7 +31,7 @@ const Footer: FC = () => {
                   fontSize: { xs: 24, sm: 28, md: 32 }
                 }}
               >
-                Coursespace
+                ScholarBridge Academy
               </Typography>
               <Typography 
                 variant="subtitle1" 
@@ -42,7 +42,8 @@ const Footer: FC = () => {
                   lineHeight: { xs: 1.4, md: 1.5 }
                 }}
               >
-                Coursespace is an online learning platform that has been operating since 2018 until now.
+                We recognize that each student has unique strengths and learning needs, which is why we design a thoughtfully 
+                crafted and personalized curriculum tailored to suit every learner.
               </Typography>
               <FooterSocialLinks />
             </Box>
