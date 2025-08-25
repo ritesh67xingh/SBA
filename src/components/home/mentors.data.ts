@@ -4,10 +4,10 @@ export const data: Array<Mentor> = [
   {
     id: 1,
     photo: '/SBA/images/mentors/christian-buehner-DItYlc26zVI-unsplash.jpg',
-    name: 'Jhon Dwirian',
-    category: 'UI/UX Design',
+    name: 'Laxmi Ma'am',
+    category: 'MCA | Coding & Robotics Expert',
     description:
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      'Passionate educator with 7+ years of teaching experience in coding and robotics. She inspires students to explore technology, build logical thinking, and apply creativity through hands-on learning and innovative problem-solving.',
     company: {
       name: 'Grab',
       logo: '/SBA/images/companies/grab.png',
@@ -16,10 +16,10 @@ export const data: Array<Mentor> = [
   {
     id: 2,
     photo: '/SBA/images/mentors/jonas-kakaroto-KIPqvvTOC1s-unsplash.jpg',
-    name: 'Leon S Kennedy',
-    category: 'Machine Learning',
+    name: 'Nitesh Sir',
+    category: 'M. Pharma | Science Educator',
     description:
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      'Experienced science mentor with 9+ years of teaching in pharmacy and life sciences. He simplifies complex concepts, nurtures curiosity, and helps students build a strong foundation in science through practical knowledge and engaging learning methods.',
     company: {
       name: 'Google',
       logo: '/SBA/images/companies/google.png',
