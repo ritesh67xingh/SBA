@@ -31,7 +31,7 @@ export const data: Array<Mentor> = [
     name: 'Ritesh Sir',
     category: 'M. Tech | Mathematics Educator',
     description:
-      'Mathematics teacher with 8+ years of teaching experience, known for making problem-solving simple and effective. He builds strong analytical skills, encourages logical thinking, and helps students gain confidence in mathematics through clear and engaging methods.',
+      'Mathematics teacher with 8+ years of experience, known for making problem-solving simple and effective. He builds analytical skills, encourages logical thinking, and helps students gain confidence in mathematics.',
     company: {
       name: 'Airbnb',
       logo: '/SBA/images/companies/airbnb.png',
