@@ -28,10 +28,10 @@ export const data: Array<Mentor> = [
   {
     id: 3,
     photo: '/SBA/images/mentors/noah-buscher-8A7fD6Y5VF8-unsplash.jpg',
-    name: 'Nguyễn Thuy',
-    category: 'Android Development',
+    name: 'Ritesh Sir',
+    category: 'M. Tech | Mathematics Educator',
     description:
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      'Mathematics teacher with 8+ years of teaching experience, known for making problem-solving simple and effective. He builds strong analytical skills, encourages logical thinking, and helps students gain confidence in mathematics through clear and engaging methods.',
     company: {
       name: 'Airbnb',
       logo: '/SBA/images/companies/airbnb.png',
@@ -40,10 +40,10 @@ export const data: Array<Mentor> = [
   {
     id: 4,
     photo: '/SBA/images/mentors/philip-martin-5aGUyCW_PJw-unsplash.jpg',
-    name: 'Rizki Known',
-    category: 'Fullstack Development',
+    name: 'Mani Sir',
+    category: 'Ph.D. | Social Science Educator',
     description:
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      'Social Science mentor with 10+ years of teaching experience, passionate about history, geography, and civics. He connects real-world events with classroom learning, helping students understand society, culture, and values with clarity and depth.',
     company: {
       name: 'Microsoft',
       logo: '/SBA/images/companies/microsoft.png',
