@@ -18,7 +18,7 @@ env:
   NODE_ENV: production
   # Set this to 'true' if you're using a custom domain
   # Set this to 'false' or leave empty for repo-based GitHub Pages
-  USE_CUSTOM_DOMAIN: false
+  USE_CUSTOM_DOMAIN: true
 
 jobs:
   build:
