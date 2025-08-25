@@ -1,39 +1,40 @@
-// Utility function to handle asset paths for GitHub Pages
+/**
+ * Utility function to get the correct asset path
+ * Works with both GitHub Pages repo paths and custom domains
+ */
+
 export const getAssetPath = (path: string): string => {
-  // In development or when not using basePath, return the original path
+  // Remove leading slash if present
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  
+  // Check if we're in production and have a base path
   if (typeof window !== 'undefined') {
-    // Client-side: check if we have a basePath
-    const basePath = (window as any).__NEXT_DATA__?.basePath || '';
-    return basePath + path;
+    // Client-side: check if we're on a custom domain or repo path
+    const pathname = window.location.pathname;
+    
+    // If the pathname starts with /SBA (or similar repo name), we need to include it
+    if (pathname.startsWith('/SBA')) {
+      return `/${cleanPath}`;
+    }
+    
+    // For custom domains, serve from root
+    return `/${cleanPath}`;
   }
   
-  // Server-side: use environment variables
-  const isProduction = process.env.NODE_ENV === 'production';
-  
-  if (isProduction) {
-    // Always use SBA as the repo name for production builds
-    const repo = 'SBA';
-    return `/${repo}${path}`;
-  }
-  
-  return path;
+  // Server-side: use the base path from Next.js config
+  // This will be handled by Next.js automatically
+  return `/${cleanPath}`;
 };
 
-// Simplified asset path function for images
-export const getImagePath = (path: string): string => {
-  // For GitHub Pages, we need to handle the base path correctly
-  const isProduction = process.env.NODE_ENV === 'production';
-  
-  if (isProduction) {
-    const repo = 'SBA';
-    return `/${repo}${path}`;
-  }
-  
-  // In development, check if we have a basePath from window
+/**
+ * Get the base path for the current deployment
+ */
+export const getBasePath = (): string => {
   if (typeof window !== 'undefined') {
-    const basePath = (window as any).__NEXT_DATA__?.basePath || '';
-    return basePath + path;
+    const pathname = window.location.pathname;
+    if (pathname.startsWith('/SBA')) {
+      return '/SBA';
+    }
   }
-  
-  return path;
+  return '';
 };

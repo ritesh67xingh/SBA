@@ -1,17 +1,32 @@
-/** @type {import('next').NextConfig} */
+/** @type {import('next').Config} */
 
 // Check if we're building for GitHub Pages
 const isProduction = process.env.NODE_ENV === 'production';
 
-// For GitHub Pages, we always need the basePath and assetPrefix in production
+// For GitHub Pages, we need to handle both repo-based and custom domain scenarios
 let assetPrefix = '';
 let basePath = '';
 
 if (isProduction) {
-  // Always use SBA as the repo name for production builds
-  const repo = 'SBA';
-  assetPrefix = `/${repo}`;
-  basePath = `/${repo}`;
+  // Check if we're deploying to GitHub Pages
+  if (process.env.GITHUB_REPOSITORY) {
+    const repo = process.env.GITHUB_REPOSITORY.split('/')[1];
+    
+    // Check if we have a custom domain configured
+    // Set USE_CUSTOM_DOMAIN=true in your GitHub repository secrets
+    // or environment variables to enable custom domain mode
+    if (process.env.USE_CUSTOM_DOMAIN === 'true') {
+      assetPrefix = '';
+      basePath = '';
+    } else {
+      assetPrefix = `/${repo}`;
+      basePath = `/${repo}`;
+    }
+  } else {
+    // Fallback for local builds
+    assetPrefix = '';
+    basePath = '';
+  }
 }
 
 const nextConfig = {
