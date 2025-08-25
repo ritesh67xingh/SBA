@@ -4,7 +4,7 @@ export const data: Array<Mentor> = [
   {
     id: 1,
     photo: '/SBA/images/mentors/christian-buehner-DItYlc26zVI-unsplash.jpg',
-    name: 'Laxmi Ma'am',
+    name: 'Laxmi Maam',
     category: 'MCA | Coding & Robotics Expert',
     description:
       'Passionate educator with 7+ years of teaching experience in coding and robotics. She inspires students to explore technology, build logical thinking, and apply creativity through hands-on learning and innovative problem-solving.',
